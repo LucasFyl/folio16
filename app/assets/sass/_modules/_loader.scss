@@ -1,0 +1,19 @@
+#loader {
+	@include size(100%);
+	position: fixed;
+	z-index: 99999;
+	background: white;
+
+	
+	.bar {
+		width: 0;
+		height: .5rem;
+		background: black;
+		position: absolute;
+		z-index: 99999;
+		top: 0; left: 0;
+	}
+	&.full {
+		display: none;
+	}
+}

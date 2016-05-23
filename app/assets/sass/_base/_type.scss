@@ -1,0 +1,96 @@
+/**
+ * Base styles ~ Type
+ */
+
+body {
+    font-size: 1.3rem;
+    font-family: $base-font;
+    color: $grey;
+}
+
+a {
+    color: $link-color;
+}
+
+h1, .h1, %h1,
+h2, .h2, %h2,
+h3, .h3, %h3,
+h4, .h4, %h4,
+h5, .h5, %h5,
+h6, .h6, %h6 {
+    margin: 14px 0;
+    font-family: $contrast;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    text-rendering: optimizeLegibility;
+    text-transform: uppercase;
+}
+
+h1,
+.h1,
+%h1 {
+    @include font(4.4, 4.84);
+}
+
+h2,
+.h2,
+%h2 {
+    @include font(3.7, 4.07);
+}
+
+h3,
+.h3,
+%h3 {
+    @include font(2.7, 2.97);
+}
+
+h4,
+.h4,
+%h4 {
+    @include font(2.3, 2.53);
+}
+
+h5,
+.h5,
+%h5 {
+    @include font(1.7, 1.87);
+}
+
+h6,
+.h6,
+%h6 {
+    @include font(1.4, 1.58);
+}
+
+p {
+    @include font(2, 3);
+    margin-bottom: 17px;
+    font-weight: normal;
+    color: $grey;
+}
+
+hr {
+    margin: 22px 0 21px;
+    height: 0;
+    border: solid $hr-color;
+    border-width: 1px 0 0;
+    clear: both;
+}
+
+em,
+i {
+    font-style: italic;
+    line-height: inherit;
+}
+
+strong,
+b {
+    font-weight: bold;
+    line-height: inherit;
+}
+
+small {
+    font-size: 60%;
+    line-height: inherit;
+}

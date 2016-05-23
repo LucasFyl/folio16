@@ -1,0 +1,36 @@
+title: Project
+pages: false
+files:
+  sortable: true
+fields:
+  title:
+    label: Title
+    type:  text
+  mainTitleLine1:
+    label: Main Title
+    type: text
+  mainTitleLine2:
+    label: Main Title
+    type: text
+  coverImage:
+    label: Cover Image
+    type: image
+  directUrl:
+    label: Live Project url
+    type:  url
+  type: 
+    label: Project type
+    type:  text
+    width: 1/2
+  period: 
+    label: Project period
+    type:  text
+    width: 1/2
+  role: 
+    label: Project role
+    type:  text
+    width: 1/2
+  technos:
+    label: Project technos
+    type:  text
+    width: 1/2

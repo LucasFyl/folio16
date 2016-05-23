@@ -1,0 +1,49 @@
+Title: Union Jane
+
+----
+
+Year: 2014
+
+----
+
+Tags: outdoor
+
+----
+
+Text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+
+----
+
+Maintitle: Wedding planning for the modern day woman
+
+----
+
+Coverimage: cover.png
+
+----
+
+Directurl: http://ouiwill.com/union-landing
+
+----
+
+Type: Mission freelance en équipe
+
+----
+
+Period: Janvier - Mai 2016
+
+----
+
+Role: Developpement Front-end
+
+----
+
+Technos: Angular JS (large scale application)
+
+----
+
+mainTitleLine1: Wedding planning
+
+----
+
+mainTitleLine2: for the modern day woman

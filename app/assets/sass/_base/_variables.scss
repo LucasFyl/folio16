@@ -1,0 +1,44 @@
+/**
+ * Base styles 		~	 	Grid options
+ */
+$gutter: 0;
+$border-box-sizing: true;
+$grid-columns: 6 !default;
+$max-width: none;
+$visual-grid: true;
+$visual-grid-color: red;
+$visual-grid-index: 99999;
+$visual-grid-opacity: 1;
+// Custom grid :
+$col1: calc(16.6vw * 1);
+$col2: calc(16.6vw * 2);
+$col3: calc(16.6vw * 3);
+$col4: calc(16.6vw * 4);
+$col5: calc(16.6vw * 5);
+$col6: calc(16.6vw * 6);
+
+/**
+ * Base styles 		~	 	Media Query options
+ */
+$isMobile: new-breakpoint(max-width 1000px);
+$mobile: new-breakpoint(max-width 480px);
+$desktop: new-breakpoint(min-width 480px);
+$medium: new-breakpoint(min-width 480px max-width 1200px);
+$large: new-breakpoint(min-width 1200px);
+
+/**
+ * Base styles 		~	 	Colours
+ */
+$red: #fc5457;
+$grey: #949494;
+$link-color: $red;
+$hover-color: lighten($link-color, 10);
+$heading-color: white;
+$hr-color: #fff;
+
+/**
+ * Base styles 		~	 	Type
+ */
+$base-font: 'GothamBook', sans-serif;
+$contrast: 'GothamLight', sans-serif;
+

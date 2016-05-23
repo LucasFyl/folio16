@@ -1,0 +1,49 @@
+Title: Und Gretel
+
+----
+
+Year: 2014
+
+----
+
+Tags: outdoor
+
+----
+
+Text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+
+----
+
+Maintitle: An online shop for a luxury natural makeup brand
+
+----
+
+Coverimage: cover.png
+
+----
+
+Directurl: http://undgretel.de
+
+----
+
+Type: Mission en agence (Acne Berlin)
+
+----
+
+Period: Novembre 2015 - Mars 2016
+
+----
+
+Role: Developpement Front-end
+
+----
+
+Technos: Prestashop (e-commerce CMS)
+
+----
+
+mainTitleLine1: A refined online shop for a
+
+----
+
+mainTitleLine2: luxury natural makeup brand

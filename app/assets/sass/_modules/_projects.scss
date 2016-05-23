@@ -1,0 +1,152 @@
+.gallery-title {
+	position: absolute;
+	left: $col4; top: 3.7rem;
+	padding-left: 1rem;
+	margin: 0;
+	
+	font-family: $base-font;
+	color: black;
+	font-size: 1.6rem;
+	line-height: 1.6rem;
+	text-transform: none;
+}
+
+#projects-gallery {
+	position: absolute;
+	width: calc(100% - 24rem); 
+	height: calc(100vh - 20rem);
+	top: 0 ;left: 0 ;
+	bottom: 0 ;right: 0 ;
+	margin: auto;
+
+	&:before {
+		content: " ";
+		position: fixed;
+	    position: fixed;
+	    left: calc(16.65% * 4);
+	    width: .1rem;
+	    height: calc(100vh - 10.2rem);
+	    top: 3.77rem;
+	    background: black;
+	    z-index: 9999;
+	    @include transition(height 1.5s $ease-out-expo);
+	}
+	&.no-line {
+		&:before {
+			height:0;
+		}
+	}
+
+
+	article {
+		position: absolute !important;
+		z-index: 99;
+		top: 0 !important;left: 0 !important;
+		bottom: 0 !important;right: 0 !important;
+		outline: none;
+
+		opacity: 0;
+		&:first-child {
+			opacity: 1;
+		}
+		.outer-title {
+			float: right;
+		}
+		h3,p {margin: 0;}
+		.overlay {
+			display: none;
+		}
+
+		.text {
+			position: absolute;
+			right: $col2;
+			margin-right: -12rem;
+
+			&.top {
+				top: 5rem;
+			}
+			&.bottom {
+				bottom: 5rem;
+			}
+
+			h3 {
+				text-align: right;
+				text-transform: none;
+				font-size: 6rem;
+				line-height: 7.5rem;
+				letter-spacing: .25rem;
+				white-space: nowrap;
+				margin: 0;
+				padding-right: 2rem;
+			}
+			p {
+				font-size: 1.2rem;
+				color: black;
+				font-family: $contrast;
+
+				width: $col1;
+				float: right;
+				margin-left: 70%;
+				padding-left: 1rem;
+				@include clearfix;
+			}
+		}
+	}
+}
+
+.dots-container {
+	@include size($col1 auto);
+	position: fixed;
+	left: $col4;
+	bottom: 4rem;
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		margin-left: -0.65rem;
+
+		li {
+			cursor: pointer;
+			margin: 0.5rem;
+			@include size(2rem);
+			border-radius: 100%;
+			position: relative;
+
+			&:first-child {
+				margin-left: 0;
+			}
+			@include transition(background-color 1s $ease-in-out-sine);
+			&:hover {
+				background:rgba(148,148,148,0.2);
+			}
+			
+			&:before {
+				content: " ";
+				@include size(0.6rem);
+				position: absolute;
+				top: 0;left: 0;right: 0;bottom: 0;
+				margin: auto;
+				border-radius: 100%;
+				background: black;
+			}
+
+			&.slick-active {
+				border: 1px solid black; 
+				// &:before {
+				// 	background-color: #949494;
+				// 	opacity: .4;
+				// }
+			}
+		}
+
+		button {
+			@include size(100%);
+			background: white;
+			border: none; 
+			@include appearance(none);
+			visibility: hidden;
+		}
+	}
+}
