@@ -1,0 +1,33 @@
+Title: Union Jane
+
+----
+
+mainTitleLine1: Wedding planning
+
+----
+
+mainTitleLine2: for the modern day woman
+
+----
+
+Coverimage: cover.png
+
+----
+
+Directurl: http://ouiwill.com/union-landing
+
+----
+
+Type: Team project
+
+----
+
+Period: January - May 2016
+
+----
+
+Role: Front-end Development
+
+----
+
+Technos: Angular JS (large scale application)

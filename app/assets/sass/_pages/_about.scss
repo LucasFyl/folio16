@@ -1,0 +1,110 @@
+main.about {
+	h1, h2 {
+		margin: 0 0 0 $col2;
+		text-transform: none;
+		font-family: $base-font;
+		position: relative;
+	}
+	h1 {
+		font-size: 7rem;
+	    left: -.5rem;
+	    margin-top: 16rem;
+	    margin-bottom: 1.3rem;
+	}
+	h2 {
+		font-family: $contrast;
+		font-size: 2.6rem;
+	    left: -.1rem;
+	}
+
+	.text {
+		position: relative;
+
+		p {
+			font-family: $base-font;
+			line-height: 1.5;
+			font-size: 1.3rem;
+			color: black;
+
+			a {
+				position: relative;
+				display: inline-block;
+				z-index: 2;
+				color: inherit;
+				text-decoration: none;
+
+				&:after {
+					content: " ";
+					@include size(110% 50%);
+					border-radius: .2rem;
+					background:#d7d7d7;
+					position: absolute;
+					left: -5%; bottom: -5%;
+					z-index: -1;
+					@include transition(height 0.25s $ease-out-sine);
+				}
+
+				&:hover {
+					&:after {
+						height: 110%;
+					}
+				}
+			}
+		}
+
+		&.first {
+			margin-top: 10rem;
+			width: $col2;
+			left: $col1;
+			padding-right: 14rem;
+		}
+		&.second {
+			margin-top: 10rem;
+			width: $col1;
+			left: $col2;
+		}
+		&.third {
+			margin-top: -20rem;
+			width: $col2;
+			left: $col4;
+			padding-right: 14rem;
+			p {
+				margin-left: .3rem;
+			}
+		}
+	}
+
+	.links-wrap {
+		position: absolute;
+		bottom: 5rem;right: 0;
+		width: $col1;
+
+		a {
+			text-decoration: none;
+			font-family: $base-font;
+			line-height: 1.5;
+			font-size: 1.3rem;
+			color: black;
+			padding-right: 1.8rem;
+			position: relative;
+			@include underlined(transparent, black);
+
+			&:after {
+				content: " ";
+				@include size(.3rem);
+				line-height: 1.5;
+				background:black;
+				position: absolute;
+				right: .75rem;
+				top: .4rem;
+			}
+
+			&:last-child {
+				padding-right: 0;
+				&:after {
+					content: none;
+				}
+			}
+		}
+	}
+}

@@ -1,5 +1,7 @@
-<div class="menu-trigger"></div>
-
-<div id="menu">
-  <!-- menu -->
+<div class="menu-trigger">
+	<span></span>
 </div>
+
+<nav id="menu" role="navigation">
+  <!-- menu -->
+</nav>

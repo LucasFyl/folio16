@@ -1,0 +1,33 @@
+Title: Irradié
+
+----
+
+Maintitleline1: Une présence en ligne pour
+
+----
+
+Maintitleline2: un studio de création parisien
+
+----
+
+Coverimage: cover.png
+
+----
+
+Directurl: http://irradié.fr
+
+----
+
+Type: Mission freelance à distance
+
+----
+
+Period: Février - Mars 2016
+
+----
+
+Role: Développement Front & Back-end
+
+----
+
+Technos: Kirby CMS, GSAP, Scroll Magic

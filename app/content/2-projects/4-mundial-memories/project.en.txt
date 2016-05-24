@@ -1,0 +1,33 @@
+Title: Mundial Memories
+
+----
+
+Maintitleline1: An innovative experience
+
+----
+
+Maintitleline2: for the 2014 FIFA World Cup
+
+----
+
+Coverimage: cover.png
+
+----
+
+Directurl: http://www.lequipe.fr/Football/Coupe-du-monde/Mundial-Memories/
+
+----
+
+Type: Team project
+
+----
+
+Period: April - June 2016
+
+----
+
+Role: Front-end Development 
+
+----
+
+Technos: GSAP Animations, Backbone

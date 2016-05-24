@@ -659,6 +659,11 @@ th {
   src: url("../fonts/GothamMedium.eot");
   src: url("../fonts/GothamMedium.eot") format("embedded-opentype"), url("../fonts/GothamMedium.woff2") format("woff2"), url("../fonts/GothamMedium.woff") format("woff"), url("../fonts/GothamMedium.ttf") format("truetype"), url("../fonts/GothamMedium.svg#GothamMedium") format("svg");
 }
+@font-face {
+  font-family: 'GothamBold';
+  src: url("../fonts/GothamBold.eot");
+  src: url("../fonts/GothamBold.eot") format("embedded-opentype"), url("../fonts/GothamBold.woff2") format("woff2"), url("../fonts/GothamBold.woff") format("woff"), url("../fonts/GothamBold.ttf") format("truetype"), url("../fonts/GothamBold.svg#GothamBold") format("svg");
+}
 /**
  * Base styles ~ Type
  */
@@ -670,6 +675,7 @@ body {
 
 a {
   color: #fc5457;
+  cursor: pointer !important;
 }
 
 h1, .h1,
@@ -897,15 +903,120 @@ body {
 }
 
 .menu-trigger {
-  display: none;
+  height: 4rem;
+  width: 4rem;
+  cursor: pointer;
+  position: absolute;
+  z-index: 999;
+  top: calc(50% - 2rem);
+  left: 4rem;
+  display: block;
+  text-decoration: none;
+  padding-top: 1rem;
+  padding-left: .8rem;
+}
+.menu-trigger span {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  background: black;
+  border-radius: 0.2rem;
+  height: 0.2rem;
+  width: 2.4rem;
+  transition: all 0.35s cubic-bezier(1, 0, 0, 1);
+}
+.menu-trigger span:before, .menu-trigger span:after {
+  content: '';
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(1, 0, 0, 1);
+  border-radius: 0.2rem;
+  height: 0.2rem;
+  width: 100%;
+  left: 0;
+  background: black;
+  position: absolute;
+  display: block;
+}
+.menu-trigger span:before {
+  top: -.7rem;
+}
+.menu-trigger span:after {
+  top: .7rem;
+}
+.menu-trigger.open span {
+  background-color: transparent;
+  transform: rotate(45deg) translate(0%, -50%);
+}
+.menu-trigger.open span:before, .menu-trigger.open span:after {
+  top: 0em;
+}
+.menu-trigger.open span:before {
+  transform: rotate(90deg);
+}
+.menu-trigger.open span:after {
+  transform: rotate(-180deg);
 }
 
-.language {
-  display: none;
+.languages {
+  height: 4rem;
+  width: 2rem;
+  position: fixed;
+  top: 3.5rem;
+  right: 3.5rem;
+  z-index: 9999;
 }
-
-#menu {
-  display: none;
+.languages ul {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.languages ul:before {
+  content: " ";
+  height: 3rem;
+  width: 0.1rem;
+  background: black;
+  position: fixed;
+  top: 0;
+  right: 4.5rem;
+}
+.languages ul:after {
+  content: " ";
+  height: 0.2rem;
+  width: 0.2rem;
+  background: black;
+  position: absolute;
+  position: fixed;
+  top: 5.5rem;
+  right: 4.5rem;
+}
+.languages ul li {
+  display: block;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  order: 2;
+}
+.languages ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-family: "GothamBook", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: .1rem;
+  transform: rotate(90deg);
+}
+.languages ul li.active {
+  order: 1;
+}
+.languages ul li.active a {
+  font-family: "GothamBold", sans-serif;
+  transform: none;
 }
 
 .gallery-title {
@@ -942,6 +1053,11 @@ body {
   background: black;
   z-index: 9999;
   transition: height 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+@media screen and (max-width: 1000px) {
+  #projects-gallery:before {
+    width: .2rem;
+  }
 }
 #projects-gallery.no-line:before {
   height: 0;
@@ -989,10 +1105,22 @@ body {
   margin: 0;
   padding-right: 2rem;
 }
+@media screen and (max-width: 1300px) {
+  #projects-gallery article .text h3 {
+    font-size: 4rem;
+    line-height: 5.5rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  #projects-gallery article .text h3 {
+    font-size: 6.5rem;
+    line-height: 8rem;
+  }
+}
 #projects-gallery article .text p {
   font-size: 1.2rem;
   color: black;
-  font-family: "GothamLight", sans-serif;
+  font-family: "GothamBook", sans-serif;
   width: calc(16.6vw * 1);
   float: right;
   margin-left: 70%;
@@ -1002,6 +1130,11 @@ body {
   clear: both;
   content: "";
   display: table;
+}
+@media screen and (max-width: 1000px) {
+  #projects-gallery article .text p {
+    font-size: 1.8rem;
+  }
 }
 
 .dots-container {
@@ -1028,6 +1161,7 @@ body {
   transition: background-color 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .dots-container ul li:first-child {
+  border: 1px solid black;
   margin-left: 0;
 }
 .dots-container ul li:hover {
@@ -1035,6 +1169,7 @@ body {
 }
 .dots-container ul li:before {
   content: " ";
+  cursor: pointer;
   height: 0.6rem;
   width: 0.6rem;
   position: absolute;
@@ -1046,8 +1181,9 @@ body {
   border-radius: 100%;
   background: black;
 }
-.dots-container ul li.slick-active {
-  border: 1px solid black;
+.dots-container ul li.slick-active:before {
+  background-color: #949494;
+  opacity: .4;
 }
 .dots-container ul button {
   height: 100%;
@@ -1067,4 +1203,123 @@ main {
   width: 100vw;
   overflow: hidden;
   position: relative;
+}
+
+main.about h1, main.about h2 {
+  margin: 0 0 0 calc(16.6vw * 2);
+  text-transform: none;
+  font-family: "GothamBook", sans-serif;
+  position: relative;
+}
+main.about h1 {
+  font-size: 7rem;
+  left: -.5rem;
+  margin-top: 16rem;
+  margin-bottom: 1.3rem;
+}
+main.about h2 {
+  font-family: "GothamLight", sans-serif;
+  font-size: 2.6rem;
+  left: -.1rem;
+}
+main.about .text {
+  position: relative;
+}
+main.about .text p {
+  font-family: "GothamBook", sans-serif;
+  line-height: 1.5;
+  font-size: 1.3rem;
+  color: black;
+}
+main.about .text p a {
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+  color: inherit;
+  text-decoration: none;
+}
+main.about .text p a:after {
+  content: " ";
+  height: 50%;
+  width: 110%;
+  border-radius: .2rem;
+  background: #d7d7d7;
+  position: absolute;
+  left: -5%;
+  bottom: -5%;
+  z-index: -1;
+  transition: height 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+main.about .text p a:hover:after {
+  height: 110%;
+}
+main.about .text.first {
+  margin-top: 10rem;
+  width: calc(16.6vw * 2);
+  left: calc(16.6vw * 1);
+  padding-right: 14rem;
+}
+main.about .text.second {
+  margin-top: 10rem;
+  width: calc(16.6vw * 1);
+  left: calc(16.6vw * 2);
+}
+main.about .text.third {
+  margin-top: -20rem;
+  width: calc(16.6vw * 2);
+  left: calc(16.6vw * 4);
+  padding-right: 14rem;
+}
+main.about .text.third p {
+  margin-left: .3rem;
+}
+main.about .links-wrap {
+  position: absolute;
+  bottom: 5rem;
+  right: 0;
+  width: calc(16.6vw * 1);
+}
+main.about .links-wrap a {
+  text-decoration: none;
+  font-family: "GothamBook", sans-serif;
+  line-height: 1.5;
+  font-size: 1.3rem;
+  color: black;
+  padding-right: 1.8rem;
+  position: relative;
+}
+main.about .links-wrap a > span {
+  position: relative;
+  display: inline-block;
+}
+main.about .links-wrap a > span:after {
+  content: " ";
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -.2rem;
+  background-color: transparent;
+  transition: background-color 0.25s ease;
+}
+main.about .links-wrap a:hover > span::after {
+  background-color: black;
+  transition: background-color 0.25s ease;
+}
+main.about .links-wrap a:after {
+  content: " ";
+  height: 0.3rem;
+  width: 0.3rem;
+  line-height: 1.5;
+  background: black;
+  position: absolute;
+  right: .75rem;
+  top: .4rem;
+}
+main.about .links-wrap a:last-child {
+  padding-right: 0;
+}
+main.about .links-wrap a:last-child:after {
+  content: none;
 }

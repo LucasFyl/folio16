@@ -1,0 +1,33 @@
+Title: Mundial Memories
+
+----
+
+Maintitleline1: Une expérience innovante
+
+----
+
+Maintitleline2: pour la coupe du monde 2014
+
+----
+
+Coverimage: cover.png
+
+----
+
+Directurl: http://www.lequipe.fr/Football/Coupe-du-monde/Mundial-Memories/
+
+----
+
+Type: Mission freelance en équipe
+
+----
+
+Period: Avril - Juin 2016
+
+----
+
+Role: Développement Front-end
+
+----
+
+Technos: GSAP Animations, Backbone

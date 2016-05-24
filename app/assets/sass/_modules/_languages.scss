@@ -1,0 +1,59 @@
+.languages {
+	@include size(2rem 4rem);
+	position: fixed;
+	top: 3.5rem;right: 3.5rem;
+	z-index: 9999;
+	
+	ul {
+		@include size(100%);
+		margin: 0;padding: 0;
+		list-style-type: none;
+		display: flex;
+		flex-flow: column nowrap; 
+
+		&:before {
+			content: " ";
+			@include size(.1rem 3rem);
+			background:black;
+			position: fixed;
+			top: 0;
+			right: 4.5rem;
+		}
+		&:after {
+			content: " ";
+			@include size(.2rem);
+			background:black;
+			position: absolute;
+			position: fixed;
+			top: 5.5rem;right: 4.5rem;
+		}
+
+		li {
+			display: block;
+			@include size(2rem);
+			text-align: center;
+			margin-bottom: 1.2rem;
+			order:2;
+
+			a {
+				display: inline-block;
+				text-decoration: none;
+				color: black; 
+
+				font-family: $base-font;
+				font-size: 1.2rem;
+				letter-spacing: .1rem;
+
+				@include transform(rotate(90deg));
+			}
+			&.active {
+				order:1;
+				
+				a {
+					font-family: $bold-font;
+					@include transform(none);
+				}
+			}
+		}
+	}
+}

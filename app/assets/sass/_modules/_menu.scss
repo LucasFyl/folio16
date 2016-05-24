@@ -1,10 +1,64 @@
 .menu-trigger {
-	display: none;
-}
-.language {
-	display: none;
-}
+	@include size(4rem);
+	cursor: pointer;
+	position: absolute;
+	z-index: 999;
+	top: calc(50% - 2rem);
+	left: 4rem;
+	display: block;
+	text-decoration: none;
+    padding-top: 1rem;
+    padding-left: .8rem;
 
-#menu {
-	display: none;
+	$burgerSliceHeight: .2rem;
+	$burgerSliceRadius: .2rem;
+	span {
+		cursor: pointer;
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		background: black;
+		border-radius: $burgerSliceRadius;
+		height: $burgerSliceHeight;
+		width: 2.4rem;
+		
+		@include transition(all 0.35s $ease-in-out-expo);
+		&:before, 
+		&:after {
+			content: '';
+			cursor: pointer;
+			@include transition(all 0.35s $ease-in-out-expo);
+			border-radius: $burgerSliceRadius;
+			height: $burgerSliceHeight;
+			width: 100%;
+			left: 0;
+			background: black;
+			position: absolute;
+			display: block;
+		}
+
+		&:before {
+		  top: -.7rem; 
+		}
+		&:after {
+		  top: .7rem;
+		}
+	}
+	&.open {
+		span {
+			background-color: transparent;
+			transform: rotate(45deg) translate(0%, -50%);
+
+			&:before,
+			&:after {
+				top: 0em;
+			}
+			&:before {
+				transform: rotate(90deg);
+			}
+			&:after {
+				transform: rotate(-180deg);
+			}
+		}
+	}
 }

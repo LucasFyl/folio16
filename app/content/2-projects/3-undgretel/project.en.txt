@@ -1,0 +1,33 @@
+Title: Und Gretel
+
+----
+
+mainTitleLine1: A refined online shop for a
+
+----
+
+mainTitleLine2: luxury natural makeup brand
+
+----
+
+Coverimage: cover.png
+
+----
+
+Directurl: http://undgretel.de
+
+----
+
+Type: Agency (Acne Berlin)
+
+----
+
+Period: November 2015 - March 2016
+
+----
+
+Role: Front-end Development
+
+----
+
+Technos: Prestashop (e-commerce CMS)

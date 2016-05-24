@@ -1,0 +1,33 @@
+Title: Union Jane
+
+----
+
+mainTitleLine1: Un wedding-planner
+
+----
+
+mainTitleLine2: utile, complet et agréable
+
+----
+
+Coverimage: cover.png
+
+----
+
+Directurl: http://ouiwill.com/union-landing
+
+----
+
+Type: Mission freelance en équipe
+
+----
+
+Period: Janvier - Mai 2016
+
+----
+
+Role: Développement Front-end
+
+----
+
+Technos: Angular JS (application grande échelle)

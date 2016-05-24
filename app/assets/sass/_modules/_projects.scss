@@ -30,6 +30,10 @@
 	    background: black;
 	    z-index: 9999;
 	    @include transition(height 1.5s $ease-out-expo);
+
+	    @include media(max-width 1000px) {
+	    	width: .2rem;
+	    }
 	}
 	&.no-line {
 		&:before {
@@ -78,17 +82,30 @@
 				white-space: nowrap;
 				margin: 0;
 				padding-right: 2rem;
+
+				@include media(max-width 1300px) {
+				    font-size: 4rem;
+				    line-height: 5.5rem;
+				}
+				@include media(max-width 1000px) {
+				    font-size: 6.5rem;
+				    line-height: 8rem;
+				}
 			}
 			p {
 				font-size: 1.2rem;
 				color: black;
-				font-family: $contrast;
+				font-family: $base-font;
 
 				width: $col1;
 				float: right;
 				margin-left: 70%;
 				padding-left: 1rem;
 				@include clearfix;
+
+				@include media(max-width 1000px) {
+				    font-size: 1.8rem;
+				}				
 			}
 		}
 	}
@@ -115,6 +132,7 @@
 			position: relative;
 
 			&:first-child {
+				border: 1px solid black; 
 				margin-left: 0;
 			}
 			@include transition(background-color 1s $ease-in-out-sine);
@@ -124,6 +142,7 @@
 			
 			&:before {
 				content: " ";
+				cursor: pointer;
 				@include size(0.6rem);
 				position: absolute;
 				top: 0;left: 0;right: 0;bottom: 0;
@@ -133,11 +152,10 @@
 			}
 
 			&.slick-active {
-				border: 1px solid black; 
-				// &:before {
-				// 	background-color: #949494;
-				// 	opacity: .4;
-				// }
+				&:before {
+					background-color: #949494;
+					opacity: .4;
+				}
 			}
 		}
 

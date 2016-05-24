@@ -1,0 +1,33 @@
+Title: Und Gretel
+
+----
+
+mainTitleLine1: Un shop en ligne sur-mesure
+
+----
+
+mainTitleLine2: pour du maquillage bio de luxe
+
+----
+
+Coverimage: cover.png
+
+----
+
+Directurl: http://undgretel.de
+
+----
+
+Type: Mission en agence (Acne Berlin)
+
+----
+
+Period: Novembre 2015 - Mars 2016
+
+----
+
+Role: Développement Front-end
+
+----
+
+Technos: Prestashop (e-commerce CMS)

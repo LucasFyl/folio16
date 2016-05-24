@@ -1,0 +1,36 @@
+Title: About
+
+----
+
+Maintitle: Salut, moi c’est Lucas.
+
+----
+
+Subtitle: I’m a young french guy writing code for money
+
+----
+
+Text1: 
+
+Born and raised in Paris, I now live in Berlin, working as a freelance web developer since two years. 
+I work both remotely and on-site with private clients as well as creative agencies. You can have a look at some of my projects here.
+
+----
+
+Text2: From 2011 to 2014 I have spent 3 years at HÉTIC, a renowned French web-school, studying digital creation, technology as well as project and business management.
+
+----
+
+Text3: I am very curious by nature and love to experment. I discovered digital work through my studies but I also have many other interests. Do not hesitate to get in touch with me if you want more informations, have a project idea, or anything else.
+
+----
+
+Linkedinlink: 
+
+----
+
+Resumelink: 
+
+----
+
+Contactlink: 

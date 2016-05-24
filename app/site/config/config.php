@@ -28,3 +28,19 @@ make Kirby work. For more fine-grained configuration
 of the system, please check out http://getkirby.com/docs/advanced/options
 
 */
+
+c::set('languages', array(
+  array(
+    'code'    => 'en',
+    'name'    => 'English',
+    'default' => true,
+    'locale'  => 'en_US',
+    'url'     => '/',
+  ),
+  array(
+    'code'    => 'fr',
+    'name'    => 'French',
+    'locale'  => 'fr_FR',
+    'url'     => '/fr',
+  ),
+));
