@@ -62,3 +62,37 @@
 		}
 	}
 }
+
+#menu {
+	position: fixed;
+	z-index: 99998;
+	width: calc(100% - 24rem); 
+	height: calc(100vh - 20rem);
+	top: 0 ;left: 0 ;
+	bottom: 0 ;right: 0 ;
+	margin: auto;
+
+	nav {
+		@include size(100%);
+		position: relative;
+		display: flex; 
+
+		a {
+			width: 50%; height: 100%;
+			text-decoration: none;
+			font-size: 6rem;
+			font-family: $contrast;
+			color: black;
+			text-align: center;
+
+			span {@include center(vertical);}
+			@include underlined(transparent, transparent);
+			span::after { height: .3rem; }
+			
+			&.active {
+				@include underlined(black, black);
+				span::after { height: .3rem; }
+			}
+		}
+	}
+}
