@@ -1,4 +1,4 @@
-<h2 class="gallery-title">Latest projects</h2>
+<h2 class="gallery-title"><?php echo $page->galleryTitle()->html() ?></h2>
 
 <section id="projects-gallery">
   <?php foreach(page('projects')->children()->visible() as $project): ?>

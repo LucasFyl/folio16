@@ -7,3 +7,7 @@ fields:
   text:
     label: Text
     type:  textarea
+  galleryTitle:
+    label: Gallery title
+    type: text
+    default: Latest projects

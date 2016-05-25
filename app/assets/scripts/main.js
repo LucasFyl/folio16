@@ -154,25 +154,25 @@ var Navigation = {
 	init: function() {
 		'use strict';
 		TweenMax.set('#menu', {display:'none'});
-		TweenMax.set('#menu a', {y:50, opacity:0});
 		this.bindEvents();
 	}, 
 	open: function() {
 		'use strict';
 		var openMenuTl = new TimelineMax({paused: true});
+		
 		if ( $('main.home').length ) {
 			openMenuTl
-				.to('#projects-gallery article > *, .gallery-title, .dots-container', 0.5, {opacity:0,ease:Expo.easeOut})
-				.set('#projects-gallery', {className:'+=no-line'}, '-=0.5')
-				.to('#projects-gallery', 1, {opacity:0.4, ease:Expo.easeOut}, '-=0.5')
-				.staggerTo('#menu a', 0.5, {y:0, opacity:1, ease:Expo.easeOut}, '-=1', 0.1)
 				.set('#menu', {display:'block'})
+				.set('#projects-gallery', {className:'+=no-line'})
+				.staggerFromTo('#menu a', 0.5, {y:50,opacity:0}, {y:0,opacity:1, ease:Expo.easeOut}, 0.1)
+				.to('#projects-gallery article > *, .gallery-title, .dots-container', 0.5, {opacity:0,ease:Expo.easeOut}, '-=0.5')
+				.to('#projects-gallery', 1, {opacity:0.4, ease:Expo.easeOut}, '-=0.5')
 				.play();
 		} else {
 			openMenuTl
-				.to('main > *', 0.5, {opacity:0,ease:Expo.easeOut})
 				.set('#menu', {display:'block'})
-				.staggerTo('#menu a', 0.5, {y:0,opacity:1, ease:Expo.easeOut}, 0.1)
+				.to('main > *', 0.5, {opacity:0,ease:Expo.easeOut})
+				.staggerFromTo('#menu a', 0.5, {y:50,opacity:0}, {y:0,opacity:1, ease:Expo.easeOut}, 0.1)
 				.play();
 		}
 	},
@@ -181,17 +181,17 @@ var Navigation = {
 		var closeMenuTl = new TimelineMax({paused: true});
 		if ( $('main.home').length ) {
 			closeMenuTl
-				.to('#menu a', 0.25, {y:50,opacity:0,ease:Expo.easeIn})
-				.set('#menu', {display:'none'})
-				.to('#projects-gallery article > *, .gallery-title, .dots-container', 0.5, {opacity:1,ease:Expo.easeIn})
 				.set('#projects-gallery', {className:'-=no-line'})
+				.staggerFromTo('#menu a', 0.5, {y:0,opacity:1}, {y:50,opacity:0, ease:Power2.easeIn}, -0.1)
+				.set('#menu', {display:'none'})
+				.to('#projects-gallery article > *, .gallery-title, .dots-container', 0.5, {opacity:1,ease:Expo.easeIn}, '-=0.5')
 				.to('#projects-gallery', 1, {opacity:1, ease:Expo.easeOut})
 				.play();
 		} else {
 			closeMenuTl
-				.to('#menu a', 0.25, {y:50,opacity:0,ease:Expo.easeIn})
+				.staggerFromTo('#menu a', 0.5, {y:0,opacity:1}, {y:50,opacity:0, ease:Power2.easeIn}, -0.1)
+				.to('main > *', 0.5, {opacity:1,ease:Expo.easeIn}, '-=0.5')
 				.set('#menu', {display:'none'})
-				.to('main > *', 0.5, {opacity:1,ease:Expo.easeIn})
 				.play();
 		}
 	},
