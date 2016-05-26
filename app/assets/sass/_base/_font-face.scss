@@ -34,3 +34,12 @@
          url('../fonts/GothamBold.ttf') format('truetype'),
          url('../fonts/GothamBold.svg#GothamBold') format('svg');
 }
+@font-face {
+    font-family: 'PT Serif';
+    src: url('../fonts/PTSerif-Regular.eot');
+    src: url('../fonts/PTSerif-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/PTSerif-Regular.woff') format('woff'),
+        url('../fonts/PTSerif-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -18,7 +18,7 @@ Directurl: http://www.lequipe.fr/Football/Coupe-du-monde/Mundial-Memories/
 
 ----
 
-Type: Team project
+Type: Team freelance project
 
 ----
 
@@ -26,7 +26,7 @@ Period: April - June 2016
 
 ----
 
-Role: Front-end Development 
+Role: Front-end Development
 
 ----
 

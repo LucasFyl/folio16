@@ -25,7 +25,7 @@ Text2: From 2011 to 2014 I have spent 3 years at (link: http://hetic.net text: H
 
 ----
 
-Text3: I am very curious by nature and love to experment. I discovered digital work through my studies but I also have many other interests. Do not hesitate to (link: mailto:contact@lucasfayolle.com text: get in touch) with me if you want more informations, have a project idea, or anything else.
+Text3: I am very curious by nature and love to experiment. I discovered digital work through my studies but I also have many other interests. Do not hesitate to (link: mailto:contact@lucasfayolle.com text: get in touch) with me if you want more informations, have a project idea, or anything else.
 
 ----
 

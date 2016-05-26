@@ -2,11 +2,11 @@ Title: Union Jane
 
 ----
 
-mainTitleLine1: Un wedding-planner
+Maintitleline1: Un wedding-planner
 
 ----
 
-mainTitleLine2: utile, complet et agréable
+Maintitleline2: utile, complet et agréable
 
 ----
 

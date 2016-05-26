@@ -664,6 +664,13 @@ th {
   src: url("../fonts/GothamBold.eot");
   src: url("../fonts/GothamBold.eot") format("embedded-opentype"), url("../fonts/GothamBold.woff2") format("woff2"), url("../fonts/GothamBold.woff") format("woff"), url("../fonts/GothamBold.ttf") format("truetype"), url("../fonts/GothamBold.svg#GothamBold") format("svg");
 }
+@font-face {
+  font-family: 'PT Serif';
+  src: url("../fonts/PTSerif-Regular.eot");
+  src: url("../fonts/PTSerif-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/PTSerif-Regular.woff") format("woff"), url("../fonts/PTSerif-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 /**
  * Base styles ~ Type
  */
@@ -1077,6 +1084,7 @@ body {
   text-align: center;
   margin-bottom: 1.2rem;
   order: 2;
+  transition: all 0.5s ease;
 }
 .languages ul li a {
   display: inline-block;
@@ -1086,6 +1094,7 @@ body {
   font-size: 1.2rem;
   letter-spacing: .1rem;
   transform: rotate(90deg);
+  transition: none;
 }
 .languages ul li.active {
   order: 1;
@@ -1093,6 +1102,21 @@ body {
 .languages ul li.active a {
   font-family: "GothamBold", sans-serif;
   transform: none;
+}
+.languages ul:hover li.active {
+  transform: rotate(180deg);
+  transform-origin: center 150%;
+}
+.languages ul:hover li.active a {
+  transform: rotate(-90deg);
+}
+.languages ul:hover li:not(.active) {
+  transform: rotate(180deg);
+  margin-top: 0.2rem;
+  transform-origin: center -50%;
+}
+.languages ul:hover li:not(.active) a {
+  transform: rotate(180deg);
 }
 
 .gallery-title {
@@ -1302,9 +1326,9 @@ main.about .text {
   position: relative;
 }
 main.about .text p {
-  font-family: "GothamBook", sans-serif;
+  font-family: 'PT Serif';
   line-height: 1.5;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: black;
 }
 main.about .text p a {
@@ -1333,7 +1357,7 @@ main.about .text.first {
   margin-top: 10rem;
   width: calc(16.6vw * 2);
   left: calc(16.6vw * 1);
-  padding-right: 14rem;
+  padding-right: 12rem;
 }
 main.about .text.second {
   margin-top: 10rem;
@@ -1344,7 +1368,7 @@ main.about .text.third {
   margin-top: -20rem;
   width: calc(16.6vw * 2);
   left: calc(16.6vw * 4);
-  padding-right: 14rem;
+  padding-right: 10rem;
 }
 main.about .text.third p {
   margin-left: .3rem;
