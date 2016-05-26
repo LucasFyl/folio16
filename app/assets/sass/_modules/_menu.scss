@@ -1,9 +1,9 @@
 .menu-trigger {
 	@include size(4rem);
 	cursor: pointer;
-	position: absolute;
+	position: fixed;
 	z-index: 999;
-	top: calc(50% - 2rem);
+	top: calc(50vh - 2rem);
 	left: 4rem;
 	display: block;
 	text-decoration: none;

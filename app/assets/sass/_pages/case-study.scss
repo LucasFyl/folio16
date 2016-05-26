@@ -1,0 +1,80 @@
+.landing {
+	position: relative;
+	z-index: -1;
+	height: 50rem;
+
+	h1, h2, p {
+		margin: 0;
+		text-transform: none;
+		// position: relative;
+	}
+	h1 {
+		padding-top: 18rem;
+		margin-left: $col2;
+
+		font-size: 5.6rem;
+		letter-spacing: .4rem;
+	}
+	h2 {
+		margin-left: $col2;
+		margin-top: 1rem;
+
+		font-family: $base-font;
+		font-size: 2rem;
+		letter-spacing: .1rem;
+	}
+	p {
+		color: black;
+		font-size: 1.5rem;
+		line-height: 1.5;
+		letter-spacing: .02rem;
+
+		width: $col2;
+		margin-left: $col3;
+		margin-top: 4rem;
+		padding-right: 1rem;
+	}
+}
+
+main.case-study {
+	position: relative;
+	z-index: 2;
+	background:white;
+	box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+
+	header {
+		display: flex;
+		justify-content: center; 
+		margin-bottom: 5rem;
+		
+		div {
+			width: $col1;
+			text-align: center;
+		}
+
+		h3 {
+			font-family: $medium-font;
+			font-size: 1.2rem;
+			text-transform: none;
+			margin: 0;
+		}
+		h4 {
+			font-family: $contrast;
+			font-size: 1.2rem;
+			text-transform: uppercase;
+			margin-top: 5rem;
+			margin-bottom: 1rem;
+		}
+	}
+
+	.gallery {
+		width: $col4;
+		margin: 0 auto;
+		img {
+			width: 100%;
+			margin-bottom: 5rem;
+			border-top:1px solid rgba(148,148,148, .2);
+			border-bottom:1px solid rgba(148,148,148, .2);
+		}
+	}
+}

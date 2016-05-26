@@ -34,3 +34,33 @@ fields:
     label: Project technos
     type:  text
     width: 1/2
+  line: 
+    type: line
+  projectLandingTitle:
+    label: projectLandingTitle
+    type: text
+    width: 1/4
+  projectLandingSubTitle:
+    label: projectLandingSubTitle
+    type: text
+    width: 1/4
+  projectLandingText:
+    label: projectLandingText
+    type: textarea
+    width: 1/2
+  projectType:
+    label: projectType
+    type: text
+    width: 1/4
+  projectPeriod:
+    label: projectPeriod
+    type: text
+    width: 1/4
+  projectClient:
+    label: projectClient
+    type: text
+    width: 1/4
+  projectRole:
+    label: projectRole
+    type: text
+    width: 1/4

@@ -11,6 +11,14 @@ html {
 
 body {
   position: relative;
+
+  &.unlocked {
+    overflow: auto;
+    main {
+      height: 100%;
+      overflow: auto;
+    }
+  }
 }
 img {
   max-width: 100%;

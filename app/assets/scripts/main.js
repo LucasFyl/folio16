@@ -24,6 +24,10 @@ function initPage(){
 		hideLoader();
 	}
 
+	if($('main.case-study').length) {
+		$('body').addClass('unlocked');
+	}
+
 	setTimeout(function(){
 		if ( $('main.home').length ) {
 			initHomePage();
@@ -188,7 +192,7 @@ var Navigation = {
 		} else {
 			openMenuTl
 				.set('#menu', {display:'block'})
-				.to('main > *', 0.5, {opacity:0,ease:Expo.easeOut})
+				.to('main, .landing', 0.5, {opacity:0,ease:Expo.easeOut})
 				.staggerFromTo('#menu a', 0.5, {y:50,opacity:0}, {y:0,opacity:1, ease:Expo.easeOut}, 0.1)
 				.play();
 		}
@@ -207,7 +211,7 @@ var Navigation = {
 		} else {
 			closeMenuTl
 				.staggerFromTo('#menu a', 0.5, {y:0,opacity:1}, {y:50,opacity:0, ease:Power2.easeIn}, -0.1)
-				.to('main > *', 0.5, {opacity:1,ease:Expo.easeIn}, '-=0.5')
+				.to('main, .landing', 0.5, {opacity:1,ease:Expo.easeIn}, '-=0.5')
 				.set('#menu', {display:'none'})
 				.play();
 		}

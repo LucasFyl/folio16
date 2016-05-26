@@ -34,6 +34,13 @@ html {
 body {
   position: relative;
 }
+body.unlocked {
+  overflow: auto;
+}
+body.unlocked main {
+  height: 100%;
+  overflow: auto;
+}
 
 img {
   max-width: 100%;
@@ -913,9 +920,9 @@ body {
   height: 4rem;
   width: 4rem;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   z-index: 999;
-  top: calc(50% - 2rem);
+  top: calc(50vh - 2rem);
   left: 4rem;
   display: block;
   text-decoration: none;
@@ -1464,4 +1471,76 @@ main.about .links-wrap a:last-child {
 }
 main.about .links-wrap a:last-child:after {
   content: none;
+}
+
+.landing {
+  position: relative;
+  z-index: -1;
+  height: 50rem;
+}
+.landing h1, .landing h2, .landing p {
+  margin: 0;
+  text-transform: none;
+}
+.landing h1 {
+  padding-top: 18rem;
+  margin-left: calc(16.6vw * 2);
+  font-size: 5.6rem;
+  letter-spacing: .4rem;
+}
+.landing h2 {
+  margin-left: calc(16.6vw * 2);
+  margin-top: 1rem;
+  font-family: "GothamBook", sans-serif;
+  font-size: 2rem;
+  letter-spacing: .1rem;
+}
+.landing p {
+  color: black;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  letter-spacing: .02rem;
+  width: calc(16.6vw * 2);
+  margin-left: calc(16.6vw * 3);
+  margin-top: 4rem;
+  padding-right: 1rem;
+}
+
+main.case-study {
+  position: relative;
+  z-index: 2;
+  background: white;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+}
+main.case-study header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+main.case-study header div {
+  width: calc(16.6vw * 1);
+  text-align: center;
+}
+main.case-study header h3 {
+  font-family: "GothamMedium", sans-serif;
+  font-size: 1.2rem;
+  text-transform: none;
+  margin: 0;
+}
+main.case-study header h4 {
+  font-family: "GothamLight", sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+}
+main.case-study .gallery {
+  width: calc(16.6vw * 4);
+  margin: 0 auto;
+}
+main.case-study .gallery img {
+  width: 100%;
+  margin-bottom: 5rem;
+  border-top: 1px solid rgba(148, 148, 148, 0.2);
+  border-bottom: 1px solid rgba(148, 148, 148, 0.2);
 }
