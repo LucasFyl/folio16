@@ -1181,9 +1181,6 @@ body {
 #projects-gallery article h3, #projects-gallery article p {
   margin: 0;
 }
-#projects-gallery article .overlay {
-  display: none;
-}
 #projects-gallery article .text {
   position: absolute;
   right: calc(16.6vw * 2);
@@ -1204,6 +1201,7 @@ body {
   white-space: nowrap;
   margin: 0;
   padding-right: 2rem;
+  z-index: 9999;
 }
 @media screen and (max-width: 1300px) {
   #projects-gallery article .text h3 {
@@ -1235,6 +1233,50 @@ body {
   #projects-gallery article .text p {
     font-size: 1.8rem;
   }
+}
+#projects-gallery .overlay {
+  visibility: hidden;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.6);
+}
+#projects-gallery .overlay a {
+  color: black;
+  border-color: black;
+  border-width: 1px;
+  font-family: "GothamLight", sans-serif;
+  text-align: left;
+  font-size: 1.3rem;
+  padding: 1.2rem 2.5rem;
+  width: calc( (100vw / 6) - 5rem);
+  position: fixed;
+  bottom: 0;
+  opacity: 0;
+}
+#projects-gallery .overlay a:first-child {
+  left: calc(16.6vw * 1);
+}
+#projects-gallery .overlay a:nth-child(2) {
+  left: calc(16.6vw * 2);
+}
+#projects-gallery .overlay a:before {
+  content: " ";
+  height: 100%;
+  width: 0;
+  background: url("../images/arrow-right.svg") no-repeat center center;
+  background-size: 3rem 1rem;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: width 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+#projects-gallery .overlay a:hover:before {
+  width: 5rem;
+  transition: width 0.2s cubic-bezier(0.95, 0.05, 0.795, 0.035);
 }
 
 .dots-container {

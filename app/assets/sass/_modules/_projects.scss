@@ -57,9 +57,6 @@
 			float: right;
 		}
 		h3,p {margin: 0;}
-		.overlay {
-			display: none;
-		}
 
 		.text {
 			position: absolute;
@@ -80,8 +77,10 @@
 				line-height: 7.5rem;
 				letter-spacing: .25rem;
 				white-space: nowrap;
+
 				margin: 0;
 				padding-right: 2rem;
+			    z-index: 9999;
 
 				@include media(max-width 1300px) {
 				    font-size: 4rem;
@@ -109,6 +108,67 @@
 			}
 		}
 	}
+
+
+	.overlay {
+		visibility: hidden;
+		opacity: 0;
+
+		@include size(100%);
+		position: absolute;
+		z-index: 999;
+		background:rgba(255,255,255,0.6);
+	
+		// @include transition(opacity 1s $ease-out-sine);
+		// &:hover { @include transition(opacity 1s $ease-in-sine);}
+
+		a {
+			color: black; 
+			border-color: black;
+			border-width: 1px;
+			font-family: $contrast;
+			text-align: left;
+			font-size: 1.3rem;
+
+			padding: 1.2rem 2.5rem;
+			width: calc( (100vw / 6) - 5rem);
+			position: fixed;
+			// bottom: 15.8rem;
+			bottom: 0;
+			opacity: 0;
+
+			&:first-child {
+				left: $col1;
+			}
+			&:nth-child(2) {
+				left: $col2;
+			}
+
+			&:before {
+				content: " ";
+				@include size(0 100%);
+				background:url('../images/arrow-right.svg') no-repeat center center;
+				background-size: 3rem 1rem;
+				display: block;
+				position: absolute;
+				right: 0;top:0;
+				@include transition(width 0.2s $ease-out-expo);
+			}
+			&:hover {
+				&:before {
+					width: 5rem;
+					@include transition(width 0.2s $ease-in-expo);
+				}
+			}
+		}
+	}
+	// article:hover {
+	// 	> .overlay {
+	// 		visibility: visible;
+	// 		opacity: 1;
+	// 	}
+	// }
+
 }
 
 .dots-container {

@@ -6,6 +6,7 @@
     class="project"
     style="background: url('<?php echo $project->image($project->coverImage())->url() ?>') no-repeat center center; background-size:cover; ">
     <div class="overlay">
+      <a href="<?php echo $project->url() ?>" class="btn cta">View case study</a>
       <a href="<?php echo $project->directUrl() ?>" target="blank" class="btn cta">Visit website</a>
     </div>
     <div class="text top">

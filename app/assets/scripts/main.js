@@ -57,15 +57,11 @@ function hideLoaderHome(){
 			// draw grid bars
 			.set('#loader', {display:'none'})
 			.to('.grid div', 0.5, {className:'+=empty'})
-
 			// .to('#loader', 1, {opacity:0,display:'none',ease:Power3.InOut})
 			.set('.grid', {zIndex:'-1'})
 			// // hide loader and reset grid bars zIndex
 			.set('#projects-gallery', {className:'-=no-line'})
 			.staggerTo('article:first .text p', 0.5, {opacity:1, ease:Expo.easeOut}, 0.15)
-			// draw black line
-			// .staggerFromTo('main .dots-container li', 0.3, {opacity:0, y:50}, {opacity:1,y:0,ease:Power2.easeOut}, 0.2, '+=0.5')
-
 			.play();
 
 	// console.log(loaderTl.duration());
@@ -135,6 +131,27 @@ function initGallery() {
 			.to('.outer-title h3', 0.5, {y:200,ease:Expo.easeIn})
 			.staggerTo(texts, 0.5, {opacity:0, ease:Expo.easeIn}, 0.15)
 			.play();
+	});
+
+	var article = content.find('article');
+	article.each(function(index, value){
+		$(value)
+			.hover(
+				function(){
+					var overlay = $(this).children('.overlay'),
+					btns = overlay.children('.btn')
+
+					TweenMax.to(overlay, 1, {visibility:'visible', opacity:1, ease: Power3.easeInOut});
+					TweenMax.staggerTo(btns, 1, {bottom:'15.8rem', opacity:1, ease: Power3.easeInOut});
+				}, function() {
+					var overlay = $(this).children('.overlay'),
+					btns = overlay.children('.btn')
+
+					TweenMax.to(overlay, 1, {opacity:0, ease: Power3.easeInOut});
+					TweenMax.staggerTo(btns, 1, {bottom:0, opacity:0, ease: Power3.easeInOut});
+
+				}
+			);
 	});
 }
 function initHomePage() {
