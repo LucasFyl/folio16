@@ -46,6 +46,8 @@
       <div></div>
       <div></div>
     </div>
+    
+    <?php snippet('prevnext') ?>
 
   </main>
 

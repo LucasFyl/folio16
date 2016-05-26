@@ -39,6 +39,7 @@ body.unlocked {
 }
 body.unlocked main {
   height: 100%;
+  padding-bottom: 50vh;
 }
 
 img {
@@ -116,6 +117,9 @@ ul.no-bullet {
   }
 }
 
+/**
+ * Base styles ~ Easings
+ */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -1344,6 +1348,74 @@ body {
   -o-appearance: none;
   appearance: none;
   visibility: hidden;
+}
+
+.nextprev {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: -100%;
+  z-index: -1;
+  height: auto;
+}
+.nextprev .blockprevnext {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+.nextprev .blockprevnext a {
+  text-decoration: none;
+}
+@media screen and (max-width: 480px) {
+  .nextprev .blockprevnext {
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+  }
+}
+.nextprev .blockprevnext > div {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  width: 50%;
+  height: 50vh;
+  min-height: 50vh;
+}
+.nextprev .blockprevnext > div.full {
+  width: 100%;
+}
+.nextprev .blockprevnext > div > a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 99;
+  transition: opacity 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  opacity: .5;
+}
+.nextprev .blockprevnext > div p, .nextprev .blockprevnext > div h4 {
+  margin: 0;
+}
+.nextprev .blockprevnext > div p {
+  position: relative;
+  font-size: 1.6rem;
+  color: black;
+  top: 12rem;
+  left: calc(16.6vw * 2);
+}
+.nextprev .blockprevnext > div h4 {
+  text-transform: none;
+  font-size: 6rem;
+  font-family: "GothamLight", sans-serif;
+  position: relative;
+  line-height: 1;
+  top: 20rem;
+  margin-left: -0.55rem;
+  left: calc(16.6vw * 1);
+}
+.nextprev .blockprevnext > div:hover a {
+  opacity: .2;
 }
 
 main {

@@ -235,7 +235,7 @@ var Navigation = {
 function initScrollAnimations() {
 	'use strict';
 
-	var el = $('main .gallery img');
+	var el = $('main .gallery > img');
 	el.each(function(index, value){
 		var tween = TweenMax.fromTo(value, 0.75, {y:50, opaciy:0}, {y:0, opacity:1, ease:Expo.easeOut});
 		var projectScene = new ScrollMagic.Scene({
@@ -262,4 +262,14 @@ function initScrollAnimations() {
           triggerHook: 0.5
         }).addTo(controller)
         .setTween(splashTween1);
+
+    $('.gallery').find('img:last').addClass('last');
+	var tweenNP = new TweenMax.to('.nextprev', 1, {bottom:0, ease:Expo.easeOut});
+	var nextPrev = new ScrollMagic.Scene({
+			triggerElement: "img.last", 
+			triggerHook: 'onLeave',
+			offset: 200
+		})
+	    .addTo(controller)
+	    .setTween(tweenNP);
 }
