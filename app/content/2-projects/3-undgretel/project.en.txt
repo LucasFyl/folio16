@@ -2,11 +2,11 @@ Title: Und Gretel
 
 ----
 
-mainTitleLine1: A refined online shop for a
+Maintitleline1: A refined online shop for a
 
 ----
 
-mainTitleLine2: luxury natural makeup brand
+Maintitleline2: luxury natural makeup brand
 
 ----
 
@@ -31,3 +31,31 @@ Role: Front-end Development
 ----
 
 Technos: Prestashop (e-commerce CMS)
+
+----
+
+ProjectLandingTitle: UND GRETEL Berlin
+
+----
+
+ProjectLandingSubtitle: Luxury natural and organic makeup
+
+----
+
+ProjectLandingText: 
+
+----
+
+ProjectType: Responsive Website + Shop
+
+----
+
+ProjectPeriod: November - March 2015
+
+----
+
+Projectclient: UNDGRETEL
+
+----
+
+Projectrole: Front-end Developer

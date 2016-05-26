@@ -31,3 +31,31 @@ Role: Front & Back-end development
 ----
 
 Technos: Kirby CMS, GSAP, Scroll Magic
+
+----
+
+Projectlandingtitle: Irradié
+
+----
+
+Projectlandingsubtitle: Tailor-made website with quality visuals & smooth animations.
+
+----
+
+Projectlandingtext: 
+
+----
+
+Projecttype: Responsive Website + CMS
+
+----
+
+Projectperiod: February - March 2016
+
+----
+
+Projectclient: Irradié
+
+----
+
+Projectrole: Front & Back-end developer

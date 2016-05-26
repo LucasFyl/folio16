@@ -22,7 +22,7 @@ Type: Team freelance project
 
 ----
 
-Period: April - June 2016
+Period: April - June 2014
 
 ----
 
@@ -31,3 +31,31 @@ Role: Front-end Development
 ----
 
 Technos: GSAP Animations, Backbone
+
+----
+
+Projectlandingtitle: Mundial Memories
+
+----
+
+Projectlandingsubtitle: Live again the FIFA World Cup's bests moments
+
+----
+
+Projectlandingtext: 
+
+----
+
+Projecttype: Web Application (Backbone)
+
+----
+
+Projectperiod: April - June 2014
+
+----
+
+Projectclient: L'Équipe
+
+----
+
+Projectrole: Interaction Designer

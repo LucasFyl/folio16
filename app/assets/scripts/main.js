@@ -2,7 +2,7 @@
 /*jslint latedef:false*/
 /* jshint unused:false */
 var isMobile = false; //initiate as false
-// var controller = new ScrollMagic.Controller();
+var controller = new ScrollMagic.Controller();
 
 
 $(document).ready(function(){
@@ -26,6 +26,7 @@ function initPage(){
 
 	if($('main.case-study').length) {
 		$('body').addClass('unlocked');
+		initScrollAnimations();
 	}
 
 	setTimeout(function(){
@@ -231,90 +232,34 @@ var Navigation = {
 		});
 	}
 };
-// function hideLoader(){
-// 	'use strict';
-// 	var loaderTl = new TimelineMax();
-// 	loaderTl
-// 		.set('#loader-wrap .white', {opacity:0})
-// 		.to('#loader-wrap', 1, {opacity:0, ease:Power2.easeOut})
-// 		.set('#loader-wrap', {display:'none'})
-// 		.play();
-// }
-// function landingAnimLanding() {
-// 	'use strict';
+function initScrollAnimations() {
+	'use strict';
 
-// 	var landingTl = new TimelineMax({paused:true});
+	var el = $('main .gallery img');
+	el.each(function(index, value){
+		var tween = TweenMax.fromTo(value, 0.75, {y:50, opaciy:0}, {y:0, opacity:1, ease:Expo.easeOut});
+		var projectScene = new ScrollMagic.Scene({
+		  triggerElement: value,
+		  triggerHook: 'onEnter',
+		  offset: 100
+		}).addTo(controller)
+		.setTween(tween);
+	});
 
-// 	TweenMax.set('#landing .logo, #landing .text > *, .menu-trigger, .contact-link', {opacity:0});
+	var landing = $('.landing'),
+        splashTween = TweenMax.to(landing, 0.25, {opacity:0,ease:Linear.easeNone});
+    var splashScene = new ScrollMagic.Scene({
+          triggerElement: 'main',
+          triggerHook: 0.5,
+          duration: '50%'
+        }).addTo(controller)
+        .setTween(splashTween);
 
-// 	landingTl
-// 		.staggerFromTo('.landing h1, .landing h2', 0.5, {y:50}, {y:0,opacity:1,ease:Power1.easeOut}, 0.2)
-// 		.to('h3.logo', 0.5, {opacity:1})
-// 		.fromTo('.menu-trigger, .contact-link', 0.5, {y:-20}, {y:0,opacity:1,ease:Power2.easeOut})
-// 		.to('a.btn', 0.5, {opacity:1}, "+=0.5");
-
-// 	if ($('body.home').length) {
-// 		setTimeout(function(){landingTl.play();}, 3500);
-// 	} else {
-// 		setTimeout(function(){landingTl.play();}, 1000);
-// 	}
-// }
-// function landingAnimDefault() {
-// 	'use strict';
-
-// 	var landingTl = new TimelineMax({paused:true});
-
-// 	TweenMax.set('.left h1, .left p', {opacity:0});
-// 	TweenMax.set('.super-title', {css:{opacity:0}, y:-50});
-
-// 	landingTl
-// 		.to('.super-title', 1, {y:0,css:{opacity:0.7}, ease:Power1.easeOut})
-// 		.staggerTo('.left h1, .left p', 0.5, {opacity:1}, 0.2, "-=0.5");
-
-// 	setTimeout(function(){landingTl.play();}, 1000);
-// }
-// function superTitleAnim() {
-// 	'use strict';
-	
-// 	var tween = new TweenMax.fromTo('.super-title', 0.25,{css:{opacity:0.7}}, {css:{opacity:0},ease:Linear.easeNone});
-// 	var offset = '-' + $('#trigger').css('padding-top');
-// 	var duration = $('#trigger').outerHeight() - $(window).height();
-	
-// 	// console.log(trigger, duration);
-	
-// 	var superTitleScene = new ScrollMagic.Scene({
-// 		triggerElement: '#trigger h1',
-// 		triggerHook: 'onLeave',
-// 		duration: duration,
-// 		offset: offset
-// 	}).setTween(tween)
-// 	.addTo(controller);
-// }
-// function setMenu() {
-// 	'use strict';
-
-// 	var menuTl = new TimelineMax({paused:true});
-
-// 	if ( !$('.menu-trigger').hasClass('menu-open') ) {
-// 		menuTl
-// 			.to('.main > *', 0.5, {opacity:0})
-// 			.set('.menu-trigger', {className:'+=is-active'}, '-=0.5')
-// 			.set('#menu nav li', {y:-30, opacity:0})
-// 			.set('#menu .social li', {y:0, opacity:0})
-// 			.set('#menu, .menu-trigger, .contact-link', {className:'+=menu-open'})
-// 			.to('#menu', 0.75, {opacity:1,ease:Power2.easeInOut})
-// 			.staggerTo('#menu nav li', 0.25, {y:0,opacity:1,ease:Power2.easeOut}, 0.1)
-// 			.to('#menu .social li', 0.25, {opacity:1,ease:Power2.easeOut}, '+=0.5')
-// 			.to('.logo', 0.25, {opacity:1}, '-=0.75')
-// 			.play();
-// 	} else {
-// 		menuTl
-// 			.to('#menu nav li, #menu .social li', 0.3, {y:30,opacity:0,ease:Expo.easeIn})
-// 			.set('.menu-open', {className:'-=menu-open'})
-// 			.set('.menu-trigger', {className:'-=is-active'})
-// 			.to('.main > *', 0.5, {opacity:1})
-// 			.play();
-// 	}
-// }
-
-
+	var landing1 = $('.landing div'),
+        splashTween1 = TweenMax.fromTo(landing1, 0.5, {opacity:1}, {opacity:0, ease:Expo.easeOut});
+    var splashScene1 = new ScrollMagic.Scene({
+          triggerElement: 'main',
+          triggerHook: 0.5
+        }).addTo(controller)
+        .setTween(splashTween1);
+}

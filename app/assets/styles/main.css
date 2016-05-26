@@ -39,7 +39,6 @@ body.unlocked {
 }
 body.unlocked main {
   height: 100%;
-  overflow: auto;
 }
 
 img {
@@ -1474,7 +1473,11 @@ main.about .links-wrap a:last-child:after {
 }
 
 .landing {
-  position: relative;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: -1;
   height: 50rem;
 }
@@ -1484,7 +1487,9 @@ main.about .links-wrap a:last-child:after {
 }
 .landing h1 {
   padding-top: 18rem;
-  margin-left: calc(16.6vw * 2);
+  position: relative;
+  left: calc(16.6vw * 2);
+  margin-left: -.3rem;
   font-size: 5.6rem;
   letter-spacing: .4rem;
 }
@@ -1504,13 +1509,14 @@ main.about .links-wrap a:last-child:after {
   margin-left: calc(16.6vw * 3);
   margin-top: 4rem;
   padding-right: 1rem;
+  padding-left: .1rem;
 }
 
 main.case-study {
   position: relative;
+  top: 50rem;
   z-index: 2;
   background: white;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
 }
 main.case-study header {
   display: flex;
@@ -1540,7 +1546,7 @@ main.case-study .gallery {
 }
 main.case-study .gallery img {
   width: 100%;
-  margin-bottom: 5rem;
+  margin-bottom: 8rem;
   border-top: 1px solid rgba(148, 148, 148, 0.2);
   border-bottom: 1px solid rgba(148, 148, 148, 0.2);
 }

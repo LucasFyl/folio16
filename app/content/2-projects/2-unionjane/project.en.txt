@@ -2,11 +2,11 @@ Title: Union Jane
 
 ----
 
-mainTitleLine1: Wedding planning
+Maintitleline1: Wedding planning
 
 ----
 
-mainTitleLine2: for the modern day woman
+Maintitleline2: for the modern day woman
 
 ----
 
@@ -31,3 +31,31 @@ Role: Front-end Development
 ----
 
 Technos: Angular JS (large scale application)
+
+----
+
+Projectlandingtitle: Union Jane
+
+----
+
+Projectlandingsubtitle: - is the perfect wedding planning tool.
+
+----
+
+Projectlandingtext: Tailored for your needs by successful wedding-planner Megan Machin and conceived by ouiwill, Union Jane is an online interface with many tools to walk you stress-free to your perfect day.
+
+----
+
+Projecttype: Web Application (Angular)
+
+----
+
+Projectperiod: January - April 2016
+
+----
+
+Projectclient: ouiwill
+
+----
+
+Projectrole: Front-end Developer
