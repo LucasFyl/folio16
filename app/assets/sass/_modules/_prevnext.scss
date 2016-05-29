@@ -2,8 +2,8 @@
 	width: 100%;
 	overflow: hidden;
 	position: fixed;
-	bottom: -100%;
-	z-index: -1;
+	bottom: 0;
+	z-index: 1;
 	height: auto;
 
 	.blockprevnext {

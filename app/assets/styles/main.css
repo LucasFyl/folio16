@@ -39,7 +39,8 @@ body.unlocked {
 }
 body.unlocked main {
   height: 100%;
-  padding-bottom: 50vh;
+  margin-bottom: 50vh;
+  overflow: hidden;
 }
 
 img {
@@ -1366,8 +1367,8 @@ body {
   width: 100%;
   overflow: hidden;
   position: fixed;
-  bottom: -100%;
-  z-index: -1;
+  bottom: 0;
+  z-index: 1;
   height: auto;
 }
 .nextprev .blockprevnext {
@@ -1652,6 +1653,9 @@ main.case-study {
   z-index: 2;
   background: white;
 }
+main.case-study .grid {
+  position: absolute;
+}
 main.case-study header {
   display: flex;
   justify-content: center;
@@ -1683,4 +1687,7 @@ main.case-study .gallery img {
   margin-bottom: 8rem;
   border-top: 1px solid rgba(148, 148, 148, 0.2);
   border-bottom: 1px solid rgba(148, 148, 148, 0.2);
+}
+main.case-study .gallery img:last-child {
+  margin-bottom: 0;
 }

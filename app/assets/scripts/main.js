@@ -263,13 +263,13 @@ function initScrollAnimations() {
         }).addTo(controller)
         .setTween(splashTween1);
 
-    $('.gallery').find('img:last').addClass('last');
-	var tweenNP = new TweenMax.to('.nextprev', 1, {bottom:0, ease:Expo.easeOut});
-	var nextPrev = new ScrollMagic.Scene({
-			triggerElement: "img.last", 
-			triggerHook: 'onLeave',
-			offset: 200
-		})
-	    .addTo(controller)
-	    .setTween(tweenNP);
+ //    $('.gallery').find('img:last').addClass('last');
+	// var tweenNP = new TweenMax.to('.nextprev', 1, {bottom:0, ease:Expo.easeOut});
+	// var nextPrev = new ScrollMagic.Scene({
+	// 		triggerElement: "img.last", 
+	// 		triggerHook: 'onLeave',
+	// 		offset: 200
+	// 	})
+	//     .addTo(controller)
+	//     .setTween(tweenNP);
 }

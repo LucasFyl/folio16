@@ -46,9 +46,9 @@
       <div></div>
       <div></div>
     </div>
-    
-    <?php snippet('prevnext') ?>
 
   </main>
+
+  <?php snippet('prevnext') ?>
 
 <?php snippet('footer') ?>

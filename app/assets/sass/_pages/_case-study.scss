@@ -46,6 +46,10 @@ main.case-study {
 	z-index: 2;
 	background:white;
 
+	.grid {
+		position: absolute;
+	}
+
 	header {
 		display: flex;
 		justify-content: center; 
@@ -74,11 +78,16 @@ main.case-study {
 	.gallery {
 		width: $col4;
 		margin: 0 auto;
+
 		img {
 			width: 100%;
 			margin-bottom: 8rem;
 			border-top:1px solid rgba(148,148,148, .2);
 			border-bottom:1px solid rgba(148,148,148, .2);
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 }
