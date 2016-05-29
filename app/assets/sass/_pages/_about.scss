@@ -10,11 +10,21 @@ main.about {
 	    left: -.5rem;
 	    margin-top: 16rem;
 	    margin-bottom: 1.3rem;
+
+	    @include media(min-width 768px max-width 1360px) {
+	    	font-size: 5.5rem;
+	    }
+	    @include media(max-width 768px) {
+	    	font-size: 4.5rem;
+	    }
 	}
 	h2 {
 		font-family: $contrast;
 		font-size: 2.6rem;
 	    left: -.1rem;
+	    @include media(max-width 768px) {
+	    	font-size: 2rem;
+	    }
 	}
 
 	.text {
@@ -57,17 +67,39 @@ main.about {
 			width: $col2;
 			left: $col1;
 			padding-right: 12rem;
+			@include media(min-width 768px max-width 1360px) {
+				padding-right: 5rem;
+			}
+		    @include media(max-width 768px) {
+				padding-right: 5rem;
+			}
 		}
 		&.second {
 			margin-top: 10rem;
 			width: $col1;
 			left: $col2;
+			@include media(min-width 768px max-width 1360px) {
+				margin-top: 0rem;
+				width: $col2;
+				padding-right: 5rem;
+			}
+			@include media(max-width 768px) {
+				width: $col2;
+				padding-right: 5rem;
+			}
 		}
 		&.third {
 			margin-top: -20rem;
 			width: $col2;
 			left: $col4;
 			padding-right: 10rem;
+			@include media(min-width 768px max-width 1360px) {
+				margin-top: -25rem;
+			}
+		    @include media(max-width 768px) {
+		    	margin-top: -40rem;
+		    	padding-right: 5rem;
+		    }
 			p {
 				margin-left: .3rem;
 			}
@@ -78,6 +110,7 @@ main.about {
 		position: absolute;
 		bottom: 5rem;right: 0;
 		width: $col1;
+		min-width: 210px;
 
 		a {
 			text-decoration: none;
