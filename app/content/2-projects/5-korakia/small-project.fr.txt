@@ -10,7 +10,7 @@ Directurl: http://korakia.com
 
 ----
 
-Type: Développement Front & Back-end 
+Type: Développement Front et Back
 
 ----
 

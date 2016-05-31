@@ -8,7 +8,7 @@ main.about {
 	h1 {
 		font-size: 7rem;
 	    left: -.5rem;
-	    margin-top: 16rem;
+	    padding-top: 16rem;
 	    margin-bottom: 1.3rem;
 
 	    @include media(min-width 768px max-width 1360px) {

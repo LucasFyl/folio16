@@ -6,7 +6,7 @@ Coverimage: cover-korakia.jpg
 
 ----
 
-Directurl: http://korakia.com
+Directurl: http://korakia.com/
 
 ----
 

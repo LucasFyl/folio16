@@ -9,6 +9,15 @@
       <p><?php echo $page->type() ?></p>
       <p><?php echo $page->technos() ?></p>
       <a href="<?php echo $page->directUrl() ?>" class="btn cta" target="_blank">Visit website</a>
+
+      <div class="small-prevnext">
+        <?php if( $prev = $page->prevVisible() ):  ?>
+          <a href="<?php echo $prev->url() ?>" class="prev"><span>Previous project</span></a>
+        <?php endif; ?>
+        <?php if( $next = $page->nextVisible() ):  ?>
+          <a href="<?php echo $next->url() ?>" class="next"><span>Next project</span></a>
+        <?php endif; ?>
+      </div>
     </div>
     
     <div class="gallery">

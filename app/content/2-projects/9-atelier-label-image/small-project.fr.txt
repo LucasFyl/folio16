@@ -6,11 +6,11 @@ Coverimage: cover-label.jpg
 
 ----
 
-Directurl: http://korakia.com
+Directurl: http://atelierlabelimage.com
 
 ----
 
-Type: Front & Back-end development
+Type: Développement Front et Back
 
 ----
 

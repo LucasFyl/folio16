@@ -24,7 +24,7 @@
 
 		> a {
 			@include size(100%);
-			max-width: $col2;
+			max-width: calc(16.77vw * 2);
 			overflow: visible;
 			display: block;
 			overflow: auto;
@@ -60,6 +60,7 @@
 			color: $grey;
 			line-height: 1;
 			margin-left: $col1;
+			white-space: nowrap;
 		}
 		&:nth-child(odd) {
 			margin-left: $col1;

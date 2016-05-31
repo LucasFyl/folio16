@@ -1,8 +1,8 @@
-Title: ouwill
+Title: ouiwill
 
 ----
 
-CoverImage: cover-ouiwill.jpg
+Coverimage: cover-ouiwill.jpg
 
 ----
 

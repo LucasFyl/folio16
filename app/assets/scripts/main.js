@@ -20,6 +20,7 @@ function initPage(){
 
 	if($('main.home').length) {
 		hideLoaderHome();
+		initOtherProjects();
 	} else {
 		hideLoader();
 	}
@@ -219,7 +220,6 @@ var Navigation = {
 	},
 	bindEvents: function() {
 		'use strict';
-		console.log('bindEvents');
 
 		$('body').on('click', '.menu-trigger', function(){
 			if ($(this).is('.open')) {
@@ -270,7 +270,48 @@ function initScrollAnimations() {
 		triggerElement: "img.last", 
 		triggerHook: 'onEnter',
 		offset: 200
-	})
-    .addTo(controller)
+	}).addTo(controller)
     .setTween(tweenNP);
+}
+function initOtherProjects() {
+	'use strict';
+
+	$(window).on('scroll', function(){
+		if ( $(window).scrollTop() === 0 ) {
+			TweenMax.set('#projects-gallery', {className:'-=no-line', delay:0.5})
+		}
+	});
+	$('body').on('click', '.other', function(e){
+		e.preventDefault();
+		var vh100 = $(window).height();
+		TweenMax.to(window, 1, {scrollTo:{y:vh100},ease:Power3.easeOut});
+	});
+
+
+	var hideLineT = new TweenMax.set('#projects-gallery', {className:'+=no-line'});
+	var hideLineS = new ScrollMagic.Scene({
+		triggerElement: '.gallery-title',
+		triggerHook: 'onLeave'
+	}).addTo(controller)
+	.setTween(hideLineT);
+
+
+	var el = $('.other-projects article');
+	el.each(function(index, value){
+		var tween = TweenMax.fromTo(value, 1.5, {y:80, opaciy:0}, {y:0, opacity:1, ease:Expo.easeOut});
+		var projectScene = new ScrollMagic.Scene({
+		  triggerElement: value,
+		  triggerHook: 'onEnter',
+		  offset: 30
+		}).addTo(controller)
+		.setTween(tween);
+	});
+
+	var hideMainT = new TweenMax.to('main', 1, {opacity:0,ease:Linear.easeNone});
+	var hideMainS = new ScrollMagic.Scene({
+		triggerElement: 'main',
+		triggerHook: 'onLeave',
+		duration: $(window).height()
+	}).addTo(controller)
+	.setTween(hideMainT);
 }
