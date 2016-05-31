@@ -1,0 +1,17 @@
+Title: Linqm
+
+----
+
+Coverimage: cover-linqm.jpg
+
+----
+
+Directurl: http://korakia.com
+
+----
+
+Type: Front & Back-end development
+
+----
+
+Technos: SCSS - JS -  PHP

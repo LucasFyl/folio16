@@ -1,0 +1,17 @@
+Title: ouwill
+
+----
+
+CoverImage: cover-ouiwill.jpg
+
+----
+
+Directurl: http://korakia.com
+
+----
+
+Type: Front & Back-end development
+
+----
+
+Technos: SCSS - JS -  PHP

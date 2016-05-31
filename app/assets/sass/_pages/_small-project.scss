@@ -1,0 +1,59 @@
+.small-project {
+
+	.infos {
+		position: fixed;
+		padding-top: 5rem;
+		padding-right: 5rem;
+		left: $col1;
+
+		img {
+		    max-width: calc(15.2vw * 2);
+    		@include transition(opacity 1.5s $ease-out-sine);
+		}
+		h1, p {
+			padding-left: $col1;
+		}
+		h1 {
+			text-transform: none;
+			font-size: 2.3rem;
+			font-family: $contrast;
+			margin-top: 3rem;
+			margin-bottom: 1rem;
+			line-height: 1;
+			margin-left: -0.1rem;	
+		}
+		p {
+			margin-top: 0;
+			margin-bottom: 1rem;
+			font-size: 1.2rem;
+			color: $grey;
+			line-height: 1;
+		}
+		.btn {
+			position: relative;
+			opacity: 1;
+			top: 0;left: $col1;
+			bottom: initial;
+			margin-top: 3rem;
+		}
+	}
+	.gallery {
+		max-width: $col2;
+		position: fixed;
+		height: 100vh;
+		left: $col3;
+		margin-left: .38rem;
+
+		.scroller {
+			position: relative;
+			@include size(100%);
+			overflow: auto;
+
+			img {
+				width: 100%;
+				margin-bottom: 10rem;
+				border-bottom: 1px solid $grey;
+			}
+		}
+	}
+}

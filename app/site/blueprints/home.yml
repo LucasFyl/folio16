@@ -11,3 +11,7 @@ fields:
     label: Gallery title
     type: text
     default: Latest projects
+  otherProjects:
+    label: Other Projects
+    type: text
+    default: Other projects

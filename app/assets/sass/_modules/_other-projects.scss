@@ -1,0 +1,80 @@
+.other {
+	position: absolute;
+	left: 12rem; bottom: 4.7rem;
+	margin: 0;
+	
+	font-family: $base-font;
+	text-decoration: none;
+	color: black;
+	font-size: 1.6rem;
+	line-height: 1.6rem;
+	text-transform: none;
+
+	@include underlined(transparent, black);
+	padding-right: 3.5rem;
+	background:url('../images/asset-caret-down.png') no-repeat right center;
+	background-size: 1.3rem;
+}
+
+.other-projects {
+	padding: 5rem 0;
+
+	article {
+		margin-bottom: 3rem;
+
+		> a {
+			@include size(100%);
+			max-width: $col2;
+			overflow: visible;
+			display: block;
+			overflow: auto;
+			text-decoration: none;
+
+			
+			&:hover {
+				img {
+					opacity: .4;
+    			@include transition(opacity 1.5s $ease-in-out-sine);
+				}
+			}
+		}
+
+		img {
+		    max-width: calc(16.7vw * 2);
+    		margin-left: .2rem;
+    		@include transition(opacity 1.5s $ease-out-sine);
+		}
+		h4 {
+			text-transform: none;
+			font-size: 2.3rem;
+			font-family: $contrast;
+			margin-top: 3rem;
+			margin-bottom: 1rem;
+			line-height: 1;
+			margin-left: $col1;
+		}
+		p {
+			margin-top: 0;
+			margin-bottom: 1rem;
+			font-size: 1.2rem;
+			color: $grey;
+			line-height: 1;
+			margin-left: $col1;
+		}
+		&:nth-child(odd) {
+			margin-left: $col1;
+			img {
+				margin-left: .1rem;
+			}
+		}
+		&:nth-child(even) {
+			margin-left: $col3;
+			h4 {
+				padding-left: .1rem;
+			}
+			p {
+				padding-left: .2rem;
+			}
+		}
+	}
+}

@@ -813,7 +813,9 @@ body {
   height: 100%;
   width: 100%;
   position: relative;
-  overflow: hidden;
+}
+body main {
+  min-height: 100vh;
 }
 
 .grid {
@@ -902,6 +904,51 @@ body {
 
 .op0 {
   opacity: 0 !important;
+}
+
+.cta {
+  color: black;
+  border-color: black;
+  border-width: 1px;
+  font-family: "GothamLight", sans-serif;
+  text-align: left;
+  font-size: 1.3rem;
+  padding: 1.2rem 2.5rem;
+  width: calc( (100vw / 6) - 5rem);
+  min-width: 190px;
+  position: fixed;
+  bottom: 0;
+  opacity: 0;
+}
+.cta:first-child {
+  left: calc(16.6vw * 1);
+}
+.cta:nth-child(2) {
+  left: calc(16.6vw * 2);
+}
+@media screen and (max-width: 1145px) {
+  .cta:first-child {
+    transform: translateY(-120%);
+  }
+  .cta:nth-child(2) {
+    left: calc(16.6vw * 1);
+  }
+}
+.cta:before {
+  content: " ";
+  height: 100%;
+  width: 0;
+  background: url("../images/arrow-right.svg") no-repeat center center;
+  background-size: 3rem 1rem;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: width 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.cta:hover:before {
+  width: 5rem;
+  transition: width 0.2s cubic-bezier(0.95, 0.05, 0.795, 0.035);
 }
 
 #loader {
@@ -1160,11 +1207,10 @@ body {
 #projects-gallery:before {
   content: " ";
   position: fixed;
-  position: fixed;
-  left: calc(16.65% * 4);
+  left: calc(16.66vw * 4);
   width: .1rem;
   height: calc(100vh - 10.2rem);
-  top: 3.77rem;
+  top: 3.7rem;
   background: black;
   z-index: 9999;
   transition: height 1.5s cubic-bezier(0.19, 1, 0.22, 1);
@@ -1253,6 +1299,7 @@ body {
   display: table;
 }
 #projects-gallery .overlay {
+  overflow-y: hidden;
   visibility: hidden;
   opacity: 0;
   height: 100%;
@@ -1261,55 +1308,11 @@ body {
   z-index: 999;
   background: rgba(255, 255, 255, 0.6);
 }
-#projects-gallery .overlay a {
-  color: black;
-  border-color: black;
-  border-width: 1px;
-  font-family: "GothamLight", sans-serif;
-  text-align: left;
-  font-size: 1.3rem;
-  padding: 1.2rem 2.5rem;
-  width: calc( (100vw / 6) - 5rem);
-  min-width: 190px;
-  position: fixed;
-  bottom: 0;
-  opacity: 0;
-}
-#projects-gallery .overlay a:first-child {
-  left: calc(16.6vw * 1);
-}
-#projects-gallery .overlay a:nth-child(2) {
-  left: calc(16.6vw * 2);
-}
-@media screen and (max-width: 1145px) {
-  #projects-gallery .overlay a:first-child {
-    transform: translateY(-120%);
-  }
-  #projects-gallery .overlay a:nth-child(2) {
-    left: calc(16.6vw * 1);
-  }
-}
-#projects-gallery .overlay a:before {
-  content: " ";
-  height: 100%;
-  width: 0;
-  background: url("../images/arrow-right.svg") no-repeat center center;
-  background-size: 3rem 1rem;
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: width 0.2s cubic-bezier(0.19, 1, 0.22, 1);
-}
-#projects-gallery .overlay a:hover:before {
-  width: 5rem;
-  transition: width 0.2s cubic-bezier(0.95, 0.05, 0.795, 0.035);
-}
 
 .dots-container {
   height: auto;
   width: calc(16.6vw * 1);
-  position: fixed;
+  position: absolute;
   left: calc(16.6vw * 4);
   bottom: 4rem;
 }
@@ -1365,6 +1368,98 @@ body {
   -o-appearance: none;
   appearance: none;
   visibility: hidden;
+}
+
+.other {
+  position: absolute;
+  left: 12rem;
+  bottom: 4.7rem;
+  margin: 0;
+  font-family: "GothamBook", sans-serif;
+  text-decoration: none;
+  color: black;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  text-transform: none;
+  padding-right: 3.5rem;
+  background: url("../images/asset-caret-down.png") no-repeat right center;
+  background-size: 1.3rem;
+}
+.other > span {
+  position: relative;
+  display: inline-block;
+}
+.other > span:after {
+  content: " ";
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -.2rem;
+  background-color: transparent;
+  transition: background-color 0.25s ease;
+}
+.other:hover > span::after {
+  background-color: black;
+  transition: background-color 0.25s ease;
+}
+
+.other-projects {
+  padding: 5rem 0;
+}
+.other-projects article {
+  margin-bottom: 3rem;
+}
+.other-projects article > a {
+  height: 100%;
+  width: 100%;
+  max-width: calc(16.6vw * 2);
+  overflow: visible;
+  display: block;
+  overflow: auto;
+  text-decoration: none;
+}
+.other-projects article > a:hover img {
+  opacity: .4;
+  transition: opacity 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.other-projects article img {
+  max-width: calc(16.7vw * 2);
+  margin-left: .2rem;
+  transition: opacity 1.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.other-projects article h4 {
+  text-transform: none;
+  font-size: 2.3rem;
+  font-family: "GothamLight", sans-serif;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+  margin-left: calc(16.6vw * 1);
+}
+.other-projects article p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #949494;
+  line-height: 1;
+  margin-left: calc(16.6vw * 1);
+}
+.other-projects article:nth-child(odd) {
+  margin-left: calc(16.6vw * 1);
+}
+.other-projects article:nth-child(odd) img {
+  margin-left: .1rem;
+}
+.other-projects article:nth-child(even) {
+  margin-left: calc(16.6vw * 3);
+}
+.other-projects article:nth-child(even) h4 {
+  padding-left: .1rem;
+}
+.other-projects article:nth-child(even) p {
+  padding-left: .2rem;
 }
 
 .nextprev {
@@ -1438,9 +1533,8 @@ body {
 }
 
 main {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+  height: 100%;
+  width: 100%;
   position: relative;
 }
 
@@ -1696,4 +1790,60 @@ main.case-study .gallery img {
 }
 main.case-study .gallery img:last-child {
   margin-bottom: 0;
+}
+
+.small-project .infos {
+  position: fixed;
+  padding-top: 5rem;
+  padding-right: 5rem;
+  left: calc(16.6vw * 1);
+}
+.small-project .infos img {
+  max-width: calc(15.2vw * 2);
+  transition: opacity 1.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.small-project .infos h1, .small-project .infos p {
+  padding-left: calc(16.6vw * 1);
+}
+.small-project .infos h1 {
+  text-transform: none;
+  font-size: 2.3rem;
+  font-family: "GothamLight", sans-serif;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+  margin-left: -0.1rem;
+}
+.small-project .infos p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #949494;
+  line-height: 1;
+}
+.small-project .infos .btn {
+  position: relative;
+  opacity: 1;
+  top: 0;
+  left: calc(16.6vw * 1);
+  bottom: initial;
+  margin-top: 3rem;
+}
+.small-project .gallery {
+  max-width: calc(16.6vw * 2);
+  position: fixed;
+  height: 100vh;
+  left: calc(16.6vw * 3);
+  margin-left: .38rem;
+}
+.small-project .gallery .scroller {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+.small-project .gallery .scroller img {
+  width: 100%;
+  margin-bottom: 10rem;
+  border-bottom: 1px solid #949494;
 }

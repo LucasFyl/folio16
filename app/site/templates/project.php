@@ -33,7 +33,7 @@
     </header>
     
     <div class="gallery">
-      <?php foreach($page->images()->not('cover.png') as $img): ?>
+      <?php foreach($page->images()->not($page->coverImage()) as $img): ?>
         <img src="<?php echo $img->url() ?>" alt="<?php echo $page->projectLandingTitle() ?>" />
       <?php endforeach; ?>
     </div>

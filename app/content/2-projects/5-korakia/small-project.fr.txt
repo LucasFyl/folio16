@@ -1,0 +1,17 @@
+Title: Korakia
+
+----
+
+Coverimage: cover-korakia.jpg
+
+----
+
+Directurl: http://korakia.com
+
+----
+
+Type: Développement Front & Back-end 
+
+----
+
+Technos: SCSS - JS -  PHP

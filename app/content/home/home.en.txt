@@ -3,3 +3,7 @@ Title: Home
 ----
 
 galleryTitle: Latest projects
+
+----
+
+otherProjects: Other projects

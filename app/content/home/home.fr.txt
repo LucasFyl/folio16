@@ -2,4 +2,8 @@ Title: Home
 
 ----
 
-galleryTitle: Derniers projets
+Gallerytitle: Derniers projets
+
+----
+
+Otherprojects: Autres projets

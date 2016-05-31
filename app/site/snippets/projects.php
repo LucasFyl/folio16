@@ -1,7 +1,7 @@
 <h2 class="gallery-title"><?php echo $page->galleryTitle()->html() ?></h2>
 
 <section id="projects-gallery">
-  <?php foreach(page('projects')->children()->visible() as $project): ?>
+  <?php foreach(page('projects')->children()->visible()->limit(4) as $project): ?>
   <article 
     class="project"
     style="background: url('<?php echo $project->image($project->coverImage())->url() ?>') no-repeat center center; background-size:cover; ">

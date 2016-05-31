@@ -1,0 +1,24 @@
+title: Small Project
+pages: false
+files:
+  sortable: true
+fields:
+  title:
+    label: Title
+    type:  text
+  coverImage:
+    label: Cover Image
+    type: image
+  directUrl:
+    label: Live Project url
+    type:  url
+  type: 
+    label: Project type
+    type:  text
+    width: 1/2
+    default: Front & Back-end development
+  technos:
+    label: Project technos
+    type:  text
+    width: 1/2
+    default: SCSS - JS -  PHP

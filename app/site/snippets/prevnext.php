@@ -5,14 +5,14 @@
 			<p>Previous project</p>
 			<h4><?php echo $page->prev()->title() ?></h4>
 			<a href="<?php echo $page->prev()->url() ?>"
-    		style="background: url('<?php echo $page->prev()->image('cover.png')->url() ?>') no-repeat center center; background-size:cover; ">
+    		style="background: url('<?php echo $page->prev()->image($page->prev()->coverImage())->url() ?>') no-repeat center center; background-size:cover; ">
 			</a>
 	  	</div>
 		<div class="next">
 			<p>Next project</p>
 			<h4><?php echo $page->next()->title() ?></h4>
 			<a href="<?php echo $page->next()->url() ?>"
-    		style="background: url('<?php echo $page->next()->image('cover.png')->url() ?>') no-repeat center center; background-size:cover; ">
+    		style="background: url('<?php echo $page->next()->image($page->next()->coverImage())->url() ?>') no-repeat center center; background-size:cover; ">
 			</a>
 	  	</div>
 	 	<?php elseif( $prev = !$page->prevVisible() ):  ?>
@@ -21,7 +21,7 @@
 			<p>Next project</p>
 			<h4><?php echo $page->next()->title() ?></h4>
 			<a href="<?php echo $page->next()->url() ?>"
-    		style="background: url('<?php echo $page->next()->image('cover.png')->url() ?>') no-repeat center center; background-size:cover; ">
+    		style="background: url('<?php echo $page->next()->image($page->next()->coverImage())->url() ?>') no-repeat center center; background-size:cover; ">
 			</a>
 	  	</div>
 		<?php elseif( $next = !$page->nextVisible() ): ?>
@@ -30,7 +30,7 @@
 			<p>Previous project</p>
 			<h4><?php echo $page->prev()->title() ?></h4>
 			<a href="<?php echo $page->prev()->url() ?>"
-    		style="background: url('<?php echo $page->prev()->image('cover.png')->url() ?>') no-repeat center center; background-size:cover; ">
+    		style="background: url('<?php echo $page->prev()->image($page->prev()->coverImage())->url() ?>') no-repeat center center; background-size:cover; ">
 			</a>
 	  	</div>
 		<?php endif; ?>
