@@ -109,8 +109,9 @@ function initGallery() {
 		slidesToScroll: 1,
 		arrows: false,
 		fade: true,
-		autoplay: false,
-		speed: 2000,
+		autoplay: true,
+  		autoplaySpeed: 4000,
+		speed: 3000,
         dots: true,
         appendDots: $('.dots-container')
 	});
