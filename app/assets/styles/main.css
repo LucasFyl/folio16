@@ -900,6 +900,10 @@ body {
   display: none !important;
 }
 
+.op0 {
+  opacity: 0 !important;
+}
+
 #loader {
   height: 100%;
   width: 100%;
@@ -1406,6 +1410,7 @@ body {
   z-index: 99;
   transition: opacity 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   opacity: .5;
+  bottom: -5rem;
 }
 .nextprev .blockprevnext > div p, .nextprev .blockprevnext > div h4 {
   margin: 0;
@@ -1426,6 +1431,7 @@ body {
   top: 20rem;
   margin-left: -0.55rem;
   left: calc(16.6vw * 1);
+  max-width: 70%;
 }
 .nextprev .blockprevnext > div:hover a {
   opacity: .2;
@@ -1649,7 +1655,7 @@ main.about .links-wrap a:last-child:after {
 
 main.case-study {
   position: relative;
-  top: 50rem;
+  top: 49rem;
   z-index: 2;
   background: white;
 }

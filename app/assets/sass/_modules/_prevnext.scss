@@ -36,6 +36,7 @@
 				position: absolute; z-index: 99;
 				@include transition(opacity 1s $ease-in-out-sine);
 				opacity: .5;
+				bottom: -5rem;
 			}
 
 			p, h4 {
@@ -57,6 +58,7 @@
 				top: 20rem; 
 				margin-left: -0.55rem;
 				left: $col1;
+				max-width: 70%;
 			}
 			&:hover {
 				a {

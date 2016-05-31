@@ -193,7 +193,7 @@ var Navigation = {
 		} else {
 			openMenuTl
 				.set('#menu', {display:'block'})
-				.to('main, .landing', 0.5, {opacity:0,ease:Expo.easeOut})
+				.to('main, .landing, .blockprevnext', 0.5, {className:'+=op0',ease:Expo.easeOut})
 				.staggerFromTo('#menu a', 0.5, {y:50,opacity:0}, {y:0,opacity:1, ease:Expo.easeOut}, 0.1)
 				.play();
 		}
@@ -212,7 +212,7 @@ var Navigation = {
 		} else {
 			closeMenuTl
 				.staggerFromTo('#menu a', 0.5, {y:0,opacity:1}, {y:50,opacity:0, ease:Power2.easeIn}, -0.1)
-				.to('main, .landing', 0.5, {opacity:1,ease:Expo.easeIn}, '-=0.5')
+				.to('main, .landing, .blockprevnext', 0.5, {className:'-=op0',ease:Expo.easeIn}, '-=0.5')
 				.set('#menu', {display:'none'})
 				.play();
 		}
@@ -234,6 +234,7 @@ var Navigation = {
 };
 function initScrollAnimations() {
 	'use strict';
+	TweenMax.set('.nextprev', {opacity:0});
 
 	var el = $('main .gallery > img');
 	el.each(function(index, value){
@@ -263,13 +264,13 @@ function initScrollAnimations() {
         }).addTo(controller)
         .setTween(splashTween1);
 
- //    $('.gallery').find('img:last').addClass('last');
-	// var tweenNP = new TweenMax.to('.nextprev', 1, {bottom:0, ease:Expo.easeOut});
-	// var nextPrev = new ScrollMagic.Scene({
-	// 		triggerElement: "img.last", 
-	// 		triggerHook: 'onLeave',
-	// 		offset: 200
-	// 	})
-	//     .addTo(controller)
-	//     .setTween(tweenNP);
+    $('.gallery').find('img:last').addClass('last');
+	var tweenNP = new TweenMax.to('.nextprev', 0.1, {opacity:1})
+	var nextPrev = new ScrollMagic.Scene({
+		triggerElement: "img.last", 
+		triggerHook: 'onEnter',
+		offset: 200
+	})
+    .addTo(controller)
+    .setTween(tweenNP);
 }
