@@ -40,5 +40,18 @@
 
   </main>
 
+  <div class="modal-overlay modal-fade-screen">
+    <div id="controls">
+      <a href="#" class="arrow prev">Prev</a>
+      <a href="#" class="arrow next">Next</a>
+      <div class="closeModal"></div>
+    </div>
+    <div class="scroller">
+      <!-- <div class="modal"> -->
+          <div class="modal-gallery"></div>
+      <!-- </div> -->
+    </div>
+  </div>
+
 
 <?php snippet('footer') ?>

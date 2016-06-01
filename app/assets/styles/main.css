@@ -1223,6 +1223,12 @@ body main {
 #projects-gallery.no-line:before {
   height: 0;
 }
+#projects-gallery .slick-list, #projects-gallery .slick-track {
+  height: 100%;
+  width: 100%;
+  position: static !important;
+  overflow: visible !important;
+}
 #projects-gallery article {
   position: absolute !important;
   z-index: 99;
@@ -1533,6 +1539,77 @@ body main {
   opacity: .2;
 }
 
+.modal-overlay {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-overlay .scroller {
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10rem;
+}
+.modal-overlay .modal-gallery {
+  width: 80%;
+  height: auto;
+  padding-top: 10rem;
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.closeModal {
+  height: 5rem;
+  width: 5rem;
+  cursor: pointer;
+  background: white url(../images/asset-close-icon.svg) no-repeat center center;
+  background-size: 1rem;
+  position: fixed;
+  z-index: 9999;
+  top: 5rem;
+  right: 5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.closeModal:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.arrow {
+  text-indent: -9999px;
+  height: 5rem;
+  width: 5rem;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
+  position: fixed;
+  z-index: 9999;
+  right: 5rem;
+}
+.arrow:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.arrow.next {
+  background: white url(../images/arrow-right.svg) no-repeat center center;
+  background-size: 2.2rem;
+  top: calc(50% - 4rem);
+}
+.arrow.prev {
+  background: white url(../images/arrow-left.svg) no-repeat center center;
+  background-size: 2.2rem;
+  top: calc(50% + 4rem);
+}
+
 main {
   height: 100%;
   width: 100%;
@@ -1803,9 +1880,6 @@ main.case-study .gallery img:last-child {
   max-width: calc(15.2vw * 2);
   transition: opacity 1.5s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
-.small-project .infos h1, .small-project .infos p {
-  padding-left: calc(16.6vw * 1);
-}
 .small-project .infos h1 {
   text-transform: none;
   font-size: 2.3rem;
@@ -1826,7 +1900,6 @@ main.case-study .gallery img:last-child {
   position: relative;
   opacity: 1;
   top: 0;
-  left: calc(16.6vw * 1);
   bottom: initial;
   margin-top: 3rem;
   margin-left: .1rem;
@@ -1888,4 +1961,5 @@ main.case-study .gallery img:last-child {
   width: 100%;
   margin-bottom: 10rem;
   border-bottom: 1px solid #949494;
+  cursor: pointer;
 }

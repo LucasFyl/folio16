@@ -30,6 +30,11 @@ function initPage(){
 		initScrollAnimations();
 	}
 
+	if($('main.small-project').length) {
+		Modal.init();
+		LightBox.init();
+	}
+
 	setTimeout(function(){
 		if ( $('main.home').length ) {
 			initHomePage();
@@ -316,3 +321,42 @@ function initOtherProjects() {
 	}).addTo(controller)
 	.setTween(hideMainT);
 }
+var LightBox = {
+	init: function() {
+		var galleryContent = $('.scroller').html();
+		$('body').on('click', '.gallery .scroller > img', function(){
+			var imgIndex = $(this).index();
+			LightBox.open(imgIndex, galleryContent);
+		});
+		$('body').on('click', '.closeModal', function(e){
+			e.preventDefault();
+			LightBox.close();
+		});
+		$(document).keyup(function(e){
+			if(e.which === 27) {
+			  	LightBox.close();
+			}
+		});
+	}, 
+	open: function(imgIndex, galleryContent) {
+		var gallery = $('.modal-gallery');
+		gallery.append(galleryContent);
+		gallery.slick({
+			slidesToShow: 1,
+			arrows: false,
+			dots: false,
+			fade: true,
+			autoplay: false,
+			adaptiveHeight: true
+		});
+		gallery.slick('slickGoTo', imgIndex);
+		$('.arrow.prev').on('click', function(){gallery.slick('slickPrev');});
+		$('.arrow.next').on('click', function(){gallery.slick('slickNext');});
+		Modal.open();
+	},
+	close: function() {
+		$('.modal-gallery').slick('unslick').empty();
+		$('.controls .prev').off();
+		$('.controls .next').off();
+	}
+};

@@ -1,0 +1,57 @@
+.modal-overlay {
+  @include size(100vw 100vh);
+  position: fixed; z-index: 9999;
+  top: 0;
+  background-color: rgba(0,0,0,0.5);
+
+  .scroller {
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10rem;
+  }
+  
+  .modal-gallery {
+    width: 80%;
+    height: auto;
+    padding-top: 10rem;
+    display: inline-block;
+    @include center(vertical);
+  }
+}
+
+.closeModal {
+  @include size(5rem);
+  cursor: pointer;
+  background: white url(../images/asset-close-icon.svg) no-repeat center center;
+  background-size: 1rem;
+
+  position: fixed;
+  z-index: 9999;
+  top: 5rem;
+  right: 5rem;
+
+  @include levitable(1, 2);
+}
+.arrow {
+  text-indent: -9999px;
+  @include size(5rem);
+  cursor: pointer;
+  @include levitable(1, 2);
+  
+  position: fixed;
+  z-index: 9999;
+  right: 5rem;
+
+  &.next {
+    background: white url(../images/arrow-right.svg) no-repeat center center;
+    background-size: 2.2rem;
+    top: calc(50% - 4rem);
+  }
+  &.prev {
+    background: white url(../images/arrow-left.svg) no-repeat center center;
+    background-size: 2.2rem;
+    top: calc(50% + 4rem);
+  }
+}
