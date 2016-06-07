@@ -20,7 +20,7 @@
 		<?php if($file = $page->file('CV-2016-LucasFayolle.pdf')): ?>
 		<a href="<?php echo $file->url() ?>" target="blank" ><span>Resume</span></a>
 		<?php endif; ?>
-		<a href="mailto:<?php echo $page->contactLink() ?>"><span>Contact</span></a>
+		<a href="mailto:contact@lucasfayolle.com"><span>Contact</span></a>
 	</div>
 
 </main>

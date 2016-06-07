@@ -68,7 +68,6 @@ function hideLoaderHome(){
 			// draw grid bars
 			.set('#loader', {display:'none'})
 			.to('.grid div', 0.5, {className:'+=empty'})
-			// .to('#loader', 1, {opacity:0,display:'none',ease:Power3.InOut})
 			.set('.grid', {zIndex:'-1'})
 			// // hide loader and reset grid bars zIndex
 			.set('#projects-gallery', {className:'-=no-line'})
@@ -154,7 +153,7 @@ function initGallery() {
 					btns = overlay.children('.btn')
 
 					TweenMax.to(overlay, 1, {visibility:'visible', opacity:1, ease: Power3.easeInOut});
-					TweenMax.staggerTo(btns, 1, {bottom:'15.8rem', opacity:1, ease: Power3.easeInOut});
+					TweenMax.staggerTo(btns, 1, {bottom:'5.8rem', opacity:1, ease: Power3.easeInOut});
 				}, function() {
 					var overlay = $(this).children('.overlay'),
 					btns = overlay.children('.btn')
@@ -284,7 +283,8 @@ function initOtherProjects() {
 
 	$(window).on('scroll', function(){
 		if ( $(window).scrollTop() === 0 ) {
-			TweenMax.set('#projects-gallery', {className:'-=no-line', delay:0.5})
+			TweenMax.set('#projects-gallery', {className:'-=no-line', delay:0.5});
+			TweenMax.to('main', 1, {opacity:1,ease:Linear.easeNone});
 		}
 	});
 	$('body').on('click', '.other', function(e){

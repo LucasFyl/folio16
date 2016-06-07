@@ -63,11 +63,11 @@
 		}
 	}
 	.gallery {
-		max-width: $col2;
+		max-width: calc(16.65vw * 2);
 		position: fixed;
 		height: 100vh;
 		left: $col3;
-		margin-left: .38rem;
+		margin-left: 0.17vw;
 
 		.scroller {
 			position: relative;
@@ -77,7 +77,8 @@
 			img {
 				width: 100%;
 				margin-bottom: 10rem;
-				border-bottom: 1px solid $grey;
+				border-top: 1px solid rgba(148, 148, 148, 0.2);
+				border-bottom: 1px solid rgba(148, 148, 148, 0.2);
 				cursor: pointer;
 			}
 		}

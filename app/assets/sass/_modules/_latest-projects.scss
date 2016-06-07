@@ -43,6 +43,9 @@
 		@include size(100%);
 		position: static !important;
 		overflow: visible !important;
+		.slick-slide {
+			display: block !important;
+		}
 	}
 
 	article {
@@ -94,14 +97,6 @@
 				@include media(max-width 768px) {
 					font-size: 4rem;
 				}
-				// @include media(max-width 1300px) {
-				//     font-size: 4rem;
-				//     line-height: 5.5rem;
-				// }
-				// @include media(max-width 1000px) {
-				//     font-size: 6.5rem;
-				//     line-height: 8rem;
-				// }
 			}
 			p {
 				font-size: 1.2rem;
@@ -117,14 +112,7 @@
 				white-space: nowrap;
 				overflow: hidden;
 				text-overflow: ellipsis;
-				@include clearfix;
-
-				// @include media(max-width 1000px) {
-				//     font-size: 1.8rem;
-				// }
-				// @include media(max-width 768px) {
-				// 	font-size: 4rem;
-				// }				
+				@include clearfix;	
 			}
 		}
 	}
