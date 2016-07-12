@@ -18,6 +18,9 @@
     <div class="text bottom">
       <p><?php echo $project->role()->html() ?></p>
       <p><?php echo $project->technos()->html() ?></p>
+
+      <p><a href="<?php echo $project->url() ?>" class="hide-desktop">View case study</a></p>
+      <p><a href="<?php echo $project->directUrl() ?>" target="blank" class="hide-desktop">Visit website</a></p>
     </div>
   </article>
   <?php endforeach ?>

@@ -3,6 +3,11 @@
 	position: fixed;
 	top: 3.5rem;right: 3.5rem;
 	z-index: 9999;
+	@include media($mobile) {
+		right: initial;
+		left: calc((100vw / 4) * 3);
+		top: 2.8rem;
+	}
 	
 	ul {
 		@include size(100%);
@@ -10,6 +15,9 @@
 		list-style-type: none;
 		display: flex;
 		flex-flow: column nowrap; 
+		@include media($mobile) {
+			flex-flow: row nowrap;
+		}
 
 		&:before {
 			content: " ";
@@ -23,9 +31,14 @@
 			content: " ";
 			@include size(.2rem);
 			background:black;
-			position: absolute;
 			position: fixed;
 			top: 5.5rem;right: 4.5rem;
+		}
+
+		&:before, &:after {
+			@include media($mobile) {
+				display: none;
+			}
 		}
 
 		li {
@@ -47,9 +60,23 @@
 
 				@include transform(rotate(90deg));
 				@include transition(none);
+				@include media($mobile) {
+					font-size: 1.5rem;
+					@include transform(none);
+				}
 			}
+
 			&.active {
 				order:1;
+				
+				@include media($mobile) {
+					margin-right: 2rem;
+					// &:after {
+					// 	content: "/";
+					// 	position: absolute;
+					// 	right: -1.1rem; top: .4rem;
+					// }
+				}
 				
 				a {
 					font-family: $bold-font;

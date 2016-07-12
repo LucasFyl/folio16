@@ -9,6 +9,13 @@
 	font-size: 1.6rem;
 	line-height: 1.6rem;
 	text-transform: none;
+
+	@include media($mobile) {
+		left: calc(100vw / 4);
+		padding-left: 0;
+		margin-left: -1px;
+		top: 3rem;
+	}
 }
 
 #projects-gallery {
@@ -18,6 +25,10 @@
 	top: 0 ;left: 0 ;
 	bottom: 0 ;right: 0 ;
 	margin: auto;
+	@include media($mobile) {
+		width: 100vw;
+		height: 80vh;
+	}
 
 	&:before {
 		content: " ";
@@ -31,7 +42,10 @@
 	    @include transition(height 1.5s $ease-out-expo);
 
 	    @include media(max-width 1000px) {
-	    	width: .2rem;
+	    	width: 1px;
+	    }
+	    @include media($mobile) {
+	    	display: none;
 	    }
 	}
 	&.no-line {
@@ -71,9 +85,22 @@
 
 			&.top {
 				top: 5rem;
+				@include media($mobile) {
+					margin-top: 2rem;
+				}
 			}
 			&.bottom {
 				bottom: 5rem;
+			}
+
+			@include media($mobile) {
+				position: static;
+				margin: 0;
+				max-width: 100%;
+				margin-left: calc( ( 100vw / 4 ) * 2 );
+				* {
+					white-space: normal;
+				}
 			}
 
 			h3 {
@@ -97,6 +124,12 @@
 				@include media(max-width 768px) {
 					font-size: 4rem;
 				}
+				@include media($mobile) {
+					width: 100vw;
+					position: relative;
+					right: 0;
+					white-space: normal;
+				}
 			}
 			p {
 				font-size: 1.2rem;
@@ -113,6 +146,18 @@
 				overflow: hidden;
 				text-overflow: ellipsis;
 				@include clearfix;	
+
+				@include media($mobile) {
+					margin-left: 0;
+					width: 100%;
+					max-width: 100%;
+					padding-left: 0;
+				}
+				a {
+					font-size: 1.2rem;
+					color: black;
+					font-family: $base-font;
+				}
 			}
 		}
 	}
@@ -135,6 +180,12 @@
 	position: absolute;
 	left: $col4;
 	bottom: 4rem;
+	@include media($mobile) {
+	    width: auto;
+	    bottom: 10rem;
+	    left: calc( (100% / 4) * 2);
+	    margin-left: -2px;
+	}
 
 	ul {
 		list-style: none;

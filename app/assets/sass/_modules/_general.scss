@@ -20,6 +20,13 @@ body {
   > div {
     position: relative;
     width: calc(100% / 6);
+    @include media($mobile) {
+      width: calc(100% / 4);
+      &:nth-child(5),
+      &:nth-child(6) {
+        display: none;
+      }
+    }
 
     &:after {
       content: " ";

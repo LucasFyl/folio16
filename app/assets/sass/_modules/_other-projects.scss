@@ -14,6 +14,12 @@
 	padding-right: 3.5rem;
 	background:url('../images/asset-caret-down.png') no-repeat right center;
 	background-size: 1.3rem;
+	@include media($mobile) {
+		bottom: 2.5rem;
+		left: initial;
+		@include center(horizontal);
+		position: absolute;
+	}
 }
 
 .other-projects {
@@ -34,8 +40,13 @@
 			&:hover {
 				img {
 					opacity: .4;
-    			@include transition(opacity 1.5s $ease-in-out-sine);
+    				@include transition(opacity 1.5s $ease-in-out-sine);
 				}
+			}
+
+			@include media($mobile) {
+				width: 100%;
+				max-width: 100%;
 			}
 		}
 
@@ -43,6 +54,12 @@
 		    max-width: calc(16.7vw * 2);
     		margin-left: .2rem;
     		@include transition(opacity 1.5s $ease-out-sine);
+			
+			@include media($mobile) {
+				width: 100%;
+				max-width: 100%;
+				margin-left: 0;
+			}
 		}
 		h4 {
 			text-transform: none;
@@ -67,6 +84,15 @@
 			img {
 				margin-left: .1rem;
 			}
+			@include media($mobile) {
+				margin-left: 0;
+				h4, p {
+					margin-left: calc(100vw / 4.08);
+					img {
+						margin-left: 0;
+					}
+				}
+			}
 		}
 		&:nth-child(even) {
 			margin-left: $col3;
@@ -75,6 +101,13 @@
 			}
 			p {
 				padding-left: .2rem;
+			}
+			@include media($mobile) {
+				margin-left: 0;
+				h4, p {
+					margin-left: calc(100vw / 4.08);
+					padding-left: 0;
+				}
 			}
 		}
 	}
