@@ -339,20 +339,22 @@ var LightBox = {
 		});
 	}, 
 	open: function(imgIndex, galleryContent) {
+		Modal.open();
 		var gallery = $('.modal-gallery');
 		gallery.append(galleryContent);
-		gallery.slick({
-			slidesToShow: 1,
-			arrows: false,
-			dots: false,
-			fade: true,
-			autoplay: false,
-			adaptiveHeight: true
-		});
-		gallery.slick('slickGoTo', imgIndex);
-		$('.arrow.prev').on('click', function(){gallery.slick('slickPrev');});
-		$('.arrow.next').on('click', function(){gallery.slick('slickNext');});
-		Modal.open();
+		setTimeout(function(){
+			gallery.slick({
+				slidesToShow: 1,
+				arrows: false,
+				dots: false,
+				fade: true,
+				autoplay: false,
+				adaptiveHeight: true
+			});
+			gallery.slick('slickGoTo', imgIndex);
+			$('.arrow.prev').on('click', function(){gallery.slick('slickPrev');});
+			$('.arrow.next').on('click', function(){gallery.slick('slickNext');});
+		}, 200);
 	},
 	close: function() {
 		$('.modal-gallery').slick('unslick').empty();
