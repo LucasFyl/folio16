@@ -75,11 +75,17 @@
 	top: 0 ;left: 0 ;
 	bottom: 0 ;right: 0 ;
 	margin: auto;
+	@include media($mobile) {
+		width: 100vw;
+		height: 100vh;
+	}
 
 	nav {
 		@include size(100%);
 		position: relative;
-		display: flex; 
+		@include media($desktop) {
+			display: flex; 
+		}
 
 		a {
 			width: 50%; height: 100%;
@@ -96,6 +102,21 @@
 			&.active {
 				@include underlined(black, black);
 				span::after { height: .3rem; }
+			}
+
+			@include media($mobile) {
+				width: 100vw;
+				height: 50vh;
+				> span {
+					width: 100%;
+					line-height: 40vh;
+					text-align: center;
+				}
+
+				span {
+					@include transform(none);
+					position: static;
+				}
 			}
 		}
 	}

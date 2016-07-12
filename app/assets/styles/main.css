@@ -1053,11 +1053,21 @@ body main {
   right: 0;
   margin: auto;
 }
+@media screen and (max-width: 480px) {
+  #menu {
+    width: 100vw;
+    height: 100vh;
+  }
+}
 #menu nav {
   height: 100%;
   width: 100%;
   position: relative;
-  display: flex;
+}
+@media screen and (min-width: 480px) {
+  #menu nav {
+    display: flex;
+  }
 }
 #menu nav a {
   width: 50%;
@@ -1116,6 +1126,21 @@ body main {
 }
 #menu nav a.active span::after {
   height: .3rem;
+}
+@media screen and (max-width: 480px) {
+  #menu nav a {
+    width: 100vw;
+    height: 50vh;
+  }
+  #menu nav a > span {
+    width: 100%;
+    line-height: 40vh;
+    text-align: center;
+  }
+  #menu nav a span {
+    transform: none;
+    position: static;
+  }
 }
 
 .languages {
