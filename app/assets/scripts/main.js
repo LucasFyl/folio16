@@ -239,7 +239,9 @@ var Navigation = {
 };
 function initScrollAnimations() {
 	'use strict';
-	TweenMax.set('.nextprev', {opacity:0});
+	if (!isMobile) {
+		TweenMax.set('.nextprev', {opacity:0});
+	}
 
 	var el = $('main .gallery > img');
 	el.each(function(index, value){
@@ -269,14 +271,16 @@ function initScrollAnimations() {
         }).addTo(controller)
         .setTween(splashTween1);
 
-    $('.gallery').find('img:last').addClass('last');
-	var tweenNP = new TweenMax.to('.nextprev', 0.1, {opacity:1})
-	var nextPrev = new ScrollMagic.Scene({
-		triggerElement: "img.last", 
-		triggerHook: 'onEnter',
-		offset: 200
-	}).addTo(controller)
-    .setTween(tweenNP);
+	if (!isMobile) {
+	    $('.gallery').find('img:last').addClass('last');
+		var tweenNP = new TweenMax.to('.nextprev', 0.1, {opacity:1})
+		var nextPrev = new ScrollMagic.Scene({
+			triggerElement: "img.last", 
+			triggerHook: 'onEnter',
+			offset: 200
+		}).addTo(controller)
+	    .setTween(tweenNP);
+	}
 }
 function initOtherProjects() {
 	'use strict';

@@ -8,23 +8,40 @@
 	h1, h2, p {
 		margin: 0;
 		text-transform: none;
+		@include media($mobile) {
+			text-align: center;
+		}
 	}
 	h1 {
-		padding-top: 18rem;
-	    position: relative;
-		left: $col2;
-	    margin-left: -.3rem;
-
+		@include media($desktop) {
+			padding-top: 18rem;
+		    position: relative;
+			left: $col2;
+		    margin-left: -.3rem;
+		}
+			
 		font-size: 5.6rem;
 		letter-spacing: .4rem;
+		@include media($mobile) {
+			margin-top: 15rem;
+			font-size: 5rem;
+			letter-spacing: .3rem;
+		}
 	}
 	h2 {
-		margin-left: $col2;
-		margin-top: 1rem;
+		@include media($desktop) {
+			margin-left: $col2;
+			margin-top: 1rem;
+		}
 
 		font-family: $base-font;
 		font-size: 2rem;
 		letter-spacing: .1rem;
+
+		@include media($mobile) {
+			font-size: 1.7rem;
+			letter-spacing: 0;
+		}
 	}
 	p {
 		color: black;
@@ -32,11 +49,19 @@
 		line-height: 1.5;
 		letter-spacing: .02rem;
 
-		width: $col2;
-		margin-left: $col3;
-		margin-top: 4rem;
-		padding-right: 1rem;
-		padding-left: .1rem;
+		@include media($desktop) {
+			width: $col2;
+			margin-left: $col3;
+			margin-top: 4rem;
+			padding-right: 1rem;
+			padding-left: .1rem;
+		}
+		@include media($mobile) {
+			font-size: 1.3rem;
+			text-align: left;
+			padding-left: 25%;
+			margin-top: 3rem;
+		}
 	}
 }
 
@@ -58,6 +83,9 @@ main.case-study {
 		div {
 			width: $col1;
 			text-align: center;
+			@include media($mobile) {
+				width: 50%;
+			}
 		}
 
 		h3 {
@@ -78,6 +106,9 @@ main.case-study {
 	.gallery {
 		width: $col4;
 		margin: 0 auto;
+		@include media($mobile) {
+			width: 100%;
+		}
 
 		img {
 			width: 100%;
