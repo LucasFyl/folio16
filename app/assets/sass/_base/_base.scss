@@ -64,6 +64,18 @@ ul {
 %hide {
     display: none;
 }
+.hide-mobile,
+%hide-mobile {
+  @include media($mobile) {
+    display: none !important;
+  }
+}
+.hide-desktop,
+%hide-desktop {
+  @include media($desktop) {
+    display: none !important;
+  }
+}
 
 // When we want the last column to fill in the remainder of the row
 .fill-remainder,

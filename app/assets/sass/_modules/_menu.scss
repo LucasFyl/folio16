@@ -98,6 +98,11 @@
 			span {@include center(vertical);}
 			@include underlined(transparent, transparent);
 			span::after { height: .3rem; }
+			@include media($mobile) {
+				span::after {
+					display: none;
+				}
+			}
 			
 			&.active {
 				@include underlined(black, black);
@@ -105,6 +110,7 @@
 			}
 
 			@include media($mobile) {
+				display: block;
 				width: 100vw;
 				height: 50vh;
 				> span {
@@ -115,7 +121,7 @@
 
 				span {
 					@include transform(none);
-					position: static;
+					top: 0;
 				}
 			}
 		}

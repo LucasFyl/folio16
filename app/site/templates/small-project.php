@@ -10,7 +10,7 @@
       <p><?php echo $page->technos() ?></p>
       <a href="<?php echo $page->directUrl() ?>" class="btn cta" target="_blank">Visit website</a>
 
-      <div class="small-prevnext">
+      <div class="small-prevnext hide-mobile">
         <?php if( $prev = $page->prevVisible() ):  ?>
           <a href="<?php echo $prev->url() ?>" class="prev"><span>Previous project</span></a>
         <?php endif; ?>
@@ -25,6 +25,15 @@
         <?php foreach($page->images()->not($page->coverImage()) as $img): ?>
           <img src="<?php echo $img->url() ?>" alt="<?php echo $page->projectLandingTitle() ?>" />
         <?php endforeach; ?>
+      </div>
+
+      <div class="small-prevnext hide-desktop">
+        <?php if( $prev = $page->prevVisible() ):  ?>
+          <a href="<?php echo $prev->url() ?>" class="prev"><span>Previous project</span></a>
+        <?php endif; ?>
+        <?php if( $next = $page->nextVisible() ):  ?>
+          <a href="<?php echo $next->url() ?>" class="next"><span>Next project</span></a>
+        <?php endif; ?>
       </div>
     </div>
       

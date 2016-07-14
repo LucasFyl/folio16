@@ -6,7 +6,7 @@ Coverimage: cover-ouiwill.jpg
 
 ----
 
-Directurl: http://korakia.com
+Directurl: http://ouiwill.com
 
 ----
 
