@@ -1330,38 +1330,29 @@ body main {
 #projects-gallery .slick-list, #projects-gallery .slick-track {
   height: 100%;
   width: 100%;
-  position: static !important;
-  overflow: visible !important;
 }
 #projects-gallery .slick-list .slick-slide, #projects-gallery .slick-track .slick-slide {
   display: block !important;
 }
 #projects-gallery article {
-  position: absolute !important;
+  position: relative;
   z-index: 99;
-  top: 0 !important;
-  left: 0 !important;
-  bottom: 0 !important;
-  right: 0 !important;
   outline: none;
-  opacity: 0;
-}
-#projects-gallery article:first-child {
-  opacity: 1;
-}
-#projects-gallery article .outer-title {
-  float: right;
 }
 #projects-gallery article h3, #projects-gallery article p {
   margin: 0;
 }
+#projects-gallery article .spacer {
+  margin: 25rem 0;
+}
 #projects-gallery article .text {
   position: absolute;
-  right: calc(16.6vw * 2);
-  margin-right: -12rem;
 }
 #projects-gallery article .text.top {
+  max-width: calc(16.6vw * 2);
+  position: relative;
   top: 5rem;
+  left: 9.45%;
 }
 @media screen and (max-width: 480px) {
   #projects-gallery article .text.top {
@@ -1370,6 +1361,7 @@ body main {
 }
 #projects-gallery article .text.bottom {
   bottom: 5rem;
+  left: 49%;
 }
 @media screen and (max-width: 480px) {
   #projects-gallery article .text {
@@ -1385,7 +1377,7 @@ body main {
 #projects-gallery article .text h3 {
   text-align: right;
   text-transform: none;
-  font-size: 6rem;
+  font-size: 4.5rem;
   line-height: 1.25;
   letter-spacing: .25rem;
   white-space: nowrap;
@@ -1393,19 +1385,14 @@ body main {
   padding-right: 1rem;
   z-index: 9999;
 }
-@media screen and (max-width: 1370px) {
-  #projects-gallery article .text h3 {
-    font-size: 5rem;
-  }
-}
 @media screen and (max-width: 1150px) {
   #projects-gallery article .text h3 {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
   }
 }
 @media screen and (max-width: 768px) {
   #projects-gallery article .text h3 {
-    font-size: 4rem;
+    font-size: 2rem;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1422,8 +1409,6 @@ body main {
   font-family: "GothamBook", sans-serif;
   width: calc(16.6vw * 1);
   max-width: calc(16.6vw * 1);
-  float: right;
-  margin-left: 70%;
   padding-left: 1rem;
   padding-right: 1rem;
   white-space: nowrap;
@@ -1530,7 +1515,7 @@ body main {
 
 .other {
   position: absolute;
-  left: 12rem;
+  left: 9.7rem;
   bottom: 4.7rem;
   margin: 0;
   font-family: "GothamBook", sans-serif;
@@ -1539,8 +1524,8 @@ body main {
   font-size: 1.6rem;
   line-height: 1.6rem;
   text-transform: none;
-  padding-right: 3.5rem;
-  background: url("../images/asset-caret-down.png") no-repeat right center;
+  padding-right: 2rem;
+  background: url("../images/asset-caret-down.png") no-repeat right 0.16rem;
   background-size: 1.3rem;
 }
 .other > span {

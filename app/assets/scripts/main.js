@@ -34,13 +34,6 @@ function initPage(){
 		Modal.init();
 		LightBox.init();
 	}
-
-	setTimeout(function(){
-		if ( $('main.home').length ) {
-			initHomePage();
-		}
-	}, 3500); // loaderTl.duration() = 2.75 (w/ 1s fade) (+2)
-	
 }
 function detectMobile(){
 	'use strict';
@@ -63,15 +56,26 @@ function hideLoaderHome(){
 			.to('#loader .bar', 0.5, {width:'100%',ease:Power3.Out})
 			.to('#loader .bar', 0.25, {top:-barH,ease:Power3.Out})
 			// until here basic loading bar w/ exit
-			.set('.grid', {zIndex:'99999'}).set('.grid div', {height:0})
+			.set('.grid', {zIndex:'99999'}).set('.grid div', {height:0,onComplete:function(){
+				
+				$('#projects-gallery article').find('h3').wrap('<div class="outer-title"></div>');
+				TweenMax.set('article:first .outer-title > *', {y:500});
+
+				setTimeout(function(){
+					initGallery();
+				}, 200);
+			}})
 			.to('.grid div', 1, {height:'100%',ease:Power3.InOut})
 			// draw grid bars
 			.set('#loader', {display:'none'})
 			.to('.grid div', 0.5, {className:'+=empty'})
 			.set('.grid', {zIndex:'-1'})
 			// // hide loader and reset grid bars zIndex
-			.set('#projects-gallery', {className:'-=no-line'})
-			.staggerTo('article:first .text p', 0.5, {opacity:1, ease:Expo.easeOut}, 0.15)
+			.set('#projects-gallery', {className:'-=no-line',onComplete:function(){
+			}})
+			.staggerTo('article:first .text p', 0.5, {opacity:1, ease:Expo.easeOut,onComplete:function(){
+				outerTitleAnim();
+			}}, 0.15)
 			.play();
 
 	// console.log(loaderTl.duration());
@@ -100,63 +104,56 @@ function hideLoader() {
 			.play();
 
 }
+
 function initGallery() {
 	'use strict';
 
-	var content = $('#projects-gallery'),
-		beforeChangeTl = new TimelineMax({paused:true}),
-		afterChangeTl = new TimelineMax({paused:true}),
-		slide, slideNext, texts, textsNext;
+	var projectsGallery = $('#projects-gallery'),
+		slide, slideTitle, slideNext, slideNextTitle,
+		title = '.outer-title h3';
 
-	content.slick({
+	projectsGallery.slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: false,
-		fade: true,
-		autoplay: true,
+		autoplay: false,
   		autoplaySpeed: 4000,
-		speed: 3000,
+		speed: 1000,
         dots: true,
         appendDots: $('.dots-container')
 	});
 
+	$('#projects-gallery').on('afterChange', function(event, slick, currentSlide){
+		slide = $('.slide:eq(' + currentSlide + ')');
+		slideTitle = slide.find('h3').selector;
 
-	content.on('afterChange', function(event, slick, currentSlide){
-		slide = $('.slide:eq('+currentSlide+')');
-		texts = slide.find('.text p');
-
-		afterChangeTl
-			.to('.outer-title h3', 0.5, {y:0,ease:Expo.easeOut})
-			.staggerFromTo(texts, 0.5, {opacity:0}, {opacity:1, ease:Expo.easeIn}, 0.15)
-			.play();
+		TweenMax.to('.slick-current h3', 0.5, {transform:'none',ease:Power2.easeOut,});
 	});
 
-	content.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-		slide = $('.slide:eq('+currentSlide+')');
-		slideNext = $('.slide:eq('+nextSlide+')');
-		texts = slide.find('p');
-		textsNext = slideNext.find('h3, p');
+	$('#projects-gallery').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+		slide = $('.slick-current');
+		slideTitle = slide.find('h3').selector;
 
-		beforeChangeTl
-			.set([slideNext, textsNext], {opacity:0})
-			.to('.outer-title h3', 0.5, {y:200,ease:Expo.easeIn})
-			.staggerTo(texts, 0.5, {opacity:0, ease:Expo.easeIn}, 0.15)
-			.play();
+		slideNext = slide.next('.slick-slide');
+		slideNextTitle = slideNext.find('h3').selector;
+
+		TweenMax.to(slideNextTitle, 0.5, {x:'100%',ease:Power2.easeOut});
+		TweenMax.to(slideTitle, 0.5, {x:'-100%',ease:Power2.easeOut});
 	});
 
-	var article = content.find('article');
+	var article = projectsGallery.find('article');
 	article.each(function(index, value){
 		$(value)
 			.hover(
 				function(){
 					var overlay = $(this).children('.overlay'),
-					btns = overlay.children('.btn')
+					btns = overlay.children('.btn');
 
 					TweenMax.to(overlay, 1, {visibility:'visible', opacity:1, ease: Power3.easeInOut});
 					TweenMax.staggerTo(btns, 1, {bottom:'5.8rem', opacity:1, ease: Power3.easeInOut});
 				}, function() {
 					var overlay = $(this).children('.overlay'),
-					btns = overlay.children('.btn')
+					btns = overlay.children('.btn');
 
 					TweenMax.to(overlay, 1, {opacity:0, ease: Power3.easeInOut});
 					TweenMax.staggerTo(btns, 1, {bottom:0, opacity:0, ease: Power3.easeInOut});
@@ -165,11 +162,7 @@ function initGallery() {
 			);
 	});
 }
-function initHomePage() {
-	$('#projects-gallery article').find('h3').wrap('<div class="outer-title"></div>');
-	outerTitleAnim();
-	initGallery();
-}
+
 function outerTitleAnim() {
 	'use strict';
 	var outerTTtl = new TimelineMax();
@@ -273,7 +266,7 @@ function initScrollAnimations() {
 
 	if (!isMobile) {
 	    $('.gallery').find('img:last').addClass('last');
-		var tweenNP = new TweenMax.to('.nextprev', 0.1, {opacity:1})
+		var tweenNP = new TweenMax.to('.nextprev', 0.1, {opacity:1});
 		var nextPrev = new ScrollMagic.Scene({
 			triggerElement: "img.last", 
 			triggerHook: 'onEnter',

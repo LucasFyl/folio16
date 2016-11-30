@@ -55,42 +55,39 @@
 	}
 	.slick-list, .slick-track {
 		@include size(100%);
-		position: static !important;
-		overflow: visible !important;
+		// position: static !important;
+		// overflow: visible !important;
 		.slick-slide {
 			display: block !important;
 		}
 	}
 
 	article {
-		position: absolute !important;
+		position: relative;
 		z-index: 99;
-		top: 0 !important;left: 0 !important;
-		bottom: 0 !important;right: 0 !important;
 		outline: none;
 
-		opacity: 0;
-		&:first-child {
-			opacity: 1;
-		}
-		.outer-title {
-			float: right;
-		}
 		h3,p {margin: 0;}
+
+		.spacer {
+			margin: 25rem 0;
+		}
 
 		.text {
 			position: absolute;
-			right: $col2;
-			margin-right: -12rem;
 
 			&.top {
+				max-width: $col2;
+				position: relative;
 				top: 5rem;
+    			left: 9.45%;
 				@include media($mobile) {
 					margin-top: 2rem;
 				}
 			}
 			&.bottom {
 				bottom: 5rem;
+				left: 49%;
 			}
 
 			@include media($mobile) {
@@ -106,7 +103,7 @@
 			h3 {
 				text-align: right;
 				text-transform: none;
-				font-size: 6rem;
+				font-size: 4.5rem;
 				line-height: 1.25;
 				letter-spacing: .25rem;
 				white-space: nowrap;
@@ -115,14 +112,11 @@
 				padding-right: 1rem;
 			    z-index: 9999;
 
-				@include media(max-width 1370px) {
-					font-size: 5rem;
-				}
 				@include media(max-width 1150px) {
-					font-size: 4.5rem;
+					font-size: 3.5rem;
 				}
 				@include media(max-width 768px) {
-					font-size: 4rem;
+					font-size: 2rem;
 				}
 				@include media($mobile) {
 					width: 100vw;
@@ -138,8 +132,8 @@
 
 				width: $col1;
 				max-width: $col1;
-				float: right;
-				margin-left: 70%;
+				// float: right;
+				// margin-left: 70%;
 				padding-left: 1rem;
 				padding-right: 1rem;
 				white-space: nowrap;

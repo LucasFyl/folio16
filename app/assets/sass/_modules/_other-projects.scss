@@ -1,6 +1,6 @@
 .other {
 	position: absolute;
-	left: 12rem; bottom: 4.7rem;
+	left: 9.7rem; bottom: 4.7rem;
 	margin: 0;
 	
 	font-family: $base-font;
@@ -11,8 +11,8 @@
 	text-transform: none;
 
 	@include underlined(transparent, black);
-	padding-right: 3.5rem;
-	background:url('../images/asset-caret-down.png') no-repeat right center;
+	padding-right: 2rem;
+	background:url('../images/asset-caret-down.png') no-repeat right .16rem;
 	background-size: 1.3rem;
 	@include media($mobile) {
 		bottom: 2.5rem;

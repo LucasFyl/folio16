@@ -12,13 +12,14 @@
     <div class="text top">
       <h3><?php echo $project->mainTitleLine1()->html() ?> </h3>
       <h3><?php echo $project->mainTitleLine2()->html() ?></h3>
-      <p><?php echo $project->type()->html() ?></p>    
-      <p><?php echo $project->period()->html() ?></p>    
     </div>
     <div class="text bottom">
+      <p><?php echo $project->type()->html() ?></p>    
+      <p><?php echo $project->period()->html() ?></p>    
+      <div class="spacer"></div>
       <p><?php echo $project->role()->html() ?></p>
       <p><?php echo $project->technos()->html() ?></p>
-
+    
       <p><a href="<?php echo $project->url() ?>" class="hide-desktop">View case study</a></p>
       <p><a href="<?php echo $project->directUrl() ?>" target="blank" class="hide-desktop">Visit website</a></p>
     </div>
