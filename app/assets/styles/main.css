@@ -1055,110 +1055,59 @@ body main {
 }
 
 #menu {
-  position: fixed;
-  z-index: 99998;
-  width: calc(100% - 24rem);
-  height: calc(100vh - 20rem);
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
+  height: 100%;
+  width: calc(16.6vw * 1);
+  position: absolute;
+  z-index: 999;
+  left: calc(16.6vw * 1);
 }
 @media screen and (max-width: 480px) {
   #menu {
     width: 100vw;
-    height: 100vh;
+    left: 24.5%;
   }
+}
+#menu a {
+  display: block;
+}
+#menu p, #menu a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-family: "GothamBook", sans-serif;
+  color: black;
+  line-height: 1.5;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+#menu .strong {
+  font-family: "GothamLight", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: .1rem;
+  margin-bottom: 2.5rem;
+}
+#menu .id {
+  margin-top: 10rem;
+  margin-bottom: 7rem;
+}
+#menu .id p.strong {
+  margin-bottom: 0;
+}
+#menu .id > *:not(.strong) {
+  color: rgba(0, 0, 0, 0.5);
 }
 #menu nav {
   height: 100%;
   width: 100%;
   position: relative;
 }
-@media screen and (min-width: 480px) {
-  #menu nav {
-    display: flex;
-  }
+#menu nav ul {
+  list-style: none;
 }
-#menu nav a {
-  width: 50%;
-  height: 100%;
-  text-decoration: none;
-  font-size: 6rem;
-  font-family: "GothamLight", sans-serif;
-  color: black;
-  text-align: center;
+#menu nav ul li a {
+  opacity: .5;
 }
-#menu nav a span {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-#menu nav a > span {
-  position: relative;
-  display: inline-block;
-}
-#menu nav a > span:after {
-  content: " ";
-  height: 1px;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -.2rem;
-  background-color: transparent;
-  transition: background-color 0.25s ease;
-}
-#menu nav a:hover > span::after {
-  background-color: transparent;
-  transition: background-color 0.25s ease;
-}
-#menu nav a span::after {
-  height: .3rem;
-}
-@media screen and (max-width: 480px) {
-  #menu nav a span::after {
-    display: none;
-  }
-}
-#menu nav a.active > span {
-  position: relative;
-  display: inline-block;
-}
-#menu nav a.active > span:after {
-  content: " ";
-  height: 1px;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -.2rem;
-  background-color: black;
-  transition: background-color 0.25s ease;
-}
-#menu nav a.active:hover > span::after {
-  background-color: black;
-  transition: background-color 0.25s ease;
-}
-#menu nav a.active span::after {
-  height: .3rem;
-}
-@media screen and (max-width: 480px) {
-  #menu nav a {
-    display: block;
-    width: 100vw;
-    height: 50vh;
-  }
-  #menu nav a > span {
-    width: 100%;
-    line-height: 40vh;
-    text-align: center;
-  }
-  #menu nav a span {
-    transform: none;
-    top: 0;
-  }
+#menu nav ul li:last-child {
+  margin-bottom: 2.5rem;
 }
 
 .languages {
@@ -1921,7 +1870,6 @@ main.about .text p a:after {
   content: " ";
   height: 50%;
   width: 110%;
-  border-radius: .2rem;
   background: #d7d7d7;
   position: absolute;
   left: -5%;

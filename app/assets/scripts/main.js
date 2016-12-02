@@ -196,41 +196,59 @@ var Navigation = {
 	open: function() {
 		'use strict';
 		var openMenuTl = new TimelineMax({paused: true});
+
+		openMenuTl
+			.set('#menu > *', {opacity:1,y:0})
+			.set('.grid', {zIndex:99})
+			.to('.grid div', 0.25, {className:'-=empty',ease:Expo.easeOut})
+			.set('#menu .id > *, #menu nav > *, #menu nav li', {opacity:0,x:'-20',y:'-20'})
+			.set('#menu', {display:'block'})
+			.staggerTo('#menu .id > *, #menu nav > *, #menu nav li', 0.15, {opacity:1,x:0,y:0,ease:Expo.easeOut}, 0.05)
+			.play();
 		
-		if ( $('main.home').length ) {
-			openMenuTl
-				.set('#menu', {display:'block'})
-				.set('#projects-gallery', {className:'+=no-line'})
-				.staggerFromTo('#menu a', 0.5, {y:50,opacity:0}, {y:0,opacity:1, ease:Expo.easeOut}, 0.1)
-				.to('#projects-gallery article > *, .gallery-title, .dots-container', 0.5, {opacity:0,ease:Expo.easeOut}, '-=0.5')
-				.to('#projects-gallery', 1, {opacity:0.4, ease:Expo.easeOut}, '-=0.5')
-				.play();
-		} else {
-			openMenuTl
-				.set('#menu', {display:'block'})
-				.to('main, .landing, .blockprevnext', 0.5, {className:'+=op0',ease:Expo.easeOut})
-				.staggerFromTo('#menu a', 0.5, {y:50,opacity:0}, {y:0,opacity:1, ease:Expo.easeOut}, 0.1)
-				.play();
-		}
+		// if ( $('main.home').length ) {
+		// 	openMenuTl
+		// 		.set('#menu', {display:'block'})
+		// 		.set('#projects-gallery', {className:'+=no-line'})
+		// 		.staggerFromTo('#menu a', 0.5, {y:50,opacity:0}, {y:0,opacity:1, ease:Expo.easeOut}, 0.1)
+		// 		.to('#projects-gallery article > *, .gallery-title, .dots-container', 0.5, {opacity:0,ease:Expo.easeOut}, '-=0.5')
+		// 		.to('#projects-gallery', 1, {opacity:0.4, ease:Expo.easeOut}, '-=0.5')
+		// 		.play();
+		// } else {
+		// 	openMenuTl
+		// 		.set('#menu', {display:'block'})
+		// 		.to('main, .landing, .blockprevnext', 0.5, {className:'+=op0',ease:Expo.easeOut})
+		// 		.staggerFromTo('#menu a', 0.5, {y:50,opacity:0}, {y:0,opacity:1, ease:Expo.easeOut}, 0.1)
+		// 		.play();
+		// }
 	},
 	close: function() {
 		'use strict';
+
+			
 		var closeMenuTl = new TimelineMax({paused: true});
-		if ( $('main.home').length ) {
-			closeMenuTl
-				.set('#projects-gallery', {className:'-=no-line'})
-				.staggerFromTo('#menu a', 0.5, {y:0,opacity:1}, {y:50,opacity:0, ease:Power2.easeIn}, -0.1)
-				.set('#menu', {display:'none'})
-				.to('#projects-gallery article > *, .gallery-title, .dots-container', 0.5, {opacity:1,ease:Expo.easeIn}, '-=0.5')
-				.to('#projects-gallery', 1, {opacity:1, ease:Expo.easeOut})
-				.play();
-		} else {
-			closeMenuTl
-				.staggerFromTo('#menu a', 0.5, {y:0,opacity:1}, {y:50,opacity:0, ease:Power2.easeIn}, -0.1)
-				.to('main, .landing, .blockprevnext', 0.5, {className:'-=op0',ease:Expo.easeIn}, '-=0.5')
-				.set('#menu', {display:'none'})
-				.play();
-		}
+
+		closeMenuTl
+			.to('#menu > *', 0.25, {opacity:0,y:50,ease:Expo.easeIn})
+			.to('.grid div', 0.25, {className:'+=empty',ease:Expo.easeOut})
+			.set('.grid', {zIndex:'-1',delay:0.5})
+			.set('#menu', {display:'none'})
+			.play();
+		// if ( $('main.home').length ) {
+		// 	closeMenuTl
+		// 		.set('#projects-gallery', {className:'-=no-line'})
+		// 		.staggerFromTo('#menu a', 0.5, {y:0,opacity:1}, {y:50,opacity:0, ease:Power2.easeIn}, -0.1)
+		// 		.set('#menu', {display:'none'})
+		// 		.to('#projects-gallery article > *, .gallery-title, .dots-container', 0.5, {opacity:1,ease:Expo.easeIn}, '-=0.5')
+		// 		.to('#projects-gallery', 1, {opacity:1, ease:Expo.easeOut})
+		// 		.play();
+		// } else {
+		// 	closeMenuTl
+		// 		.staggerFromTo('#menu a', 0.5, {y:0,opacity:1}, {y:50,opacity:0, ease:Power2.easeIn}, -0.1)
+		// 		.to('main, .landing, .blockprevnext', 0.5, {className:'-=op0',ease:Expo.easeIn}, '-=0.5')
+		// 		.set('#menu', {display:'none'})
+		// 		.play();
+		// }
 	},
 	bindEvents: function() {
 		'use strict';

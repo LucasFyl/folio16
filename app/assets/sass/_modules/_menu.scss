@@ -68,60 +68,56 @@
 }
 
 #menu {
-	position: fixed;
-	z-index: 99998;
-	width: calc(100% - 24rem); 
-	height: calc(100vh - 20rem);
-	top: 0 ;left: 0 ;
-	bottom: 0 ;right: 0 ;
-	margin: auto;
+	@include size($col1 100%);
+	position: absolute;
+	z-index: 999;
+	left: $col1;
+
 	@include media($mobile) {
 		width: 100vw;
-		height: 100vh;
+	    left: 24.5%;
+	}
+
+	a {
+		display: block;
+	}
+	p, a {
+		text-decoration: none;
+		font-size: 1.3rem;
+		font-family: $base-font;
+		color: black;
+		line-height: 1.5;
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+	.strong {
+		font-family: $contrast;
+		font-size: 1.8rem;
+		letter-spacing: .1rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.id {
+		margin-top: 10rem;
+		margin-bottom: 7rem;
+		p.strong {
+			margin-bottom: 0;
+		}
+		> *:not(.strong) {
+			color:rgba(0,0,0,0.5);
+		}
 	}
 
 	nav {
 		@include size(100%);
 		position: relative;
-		@include media($desktop) {
-			display: flex; 
-		}
-
-		a {
-			width: 50%; height: 100%;
-			text-decoration: none;
-			font-size: 6rem;
-			font-family: $contrast;
-			color: black;
-			text-align: center;
-
-			span {@include center(vertical);}
-			@include underlined(transparent, transparent);
-			span::after { height: .3rem; }
-			@include media($mobile) {
-				span::after {
-					display: none;
-				}
-			}
-			
-			&.active {
-				@include underlined(black, black);
-				span::after { height: .3rem; }
-			}
-
-			@include media($mobile) {
-				display: block;
-				width: 100vw;
-				height: 50vh;
-				> span {
-					width: 100%;
-					line-height: 40vh;
-					text-align: center;
-				}
-
-				span {
-					@include transform(none);
-					top: 0;
+		
+		ul {
+			list-style: none;
+			li {
+				a {opacity: .5;}
+				&:last-child {
+					margin-bottom: 2.5rem;
 				}
 			}
 		}

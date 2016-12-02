@@ -26,7 +26,7 @@
       <p><a href="<?php echo $project->directUrl() ?>" target="blank" class="hide-desktop">Visit website</a></p>
     </div>
   </article>
-  <?php endforeach ?>
+  <?php endforeach; ?>
 </section>
 
 <div class="dots-container"></div>

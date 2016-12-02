@@ -64,7 +64,6 @@ main.about {
 				&:after {
 					content: " ";
 					@include size(110% 50%);
-					border-radius: .2rem;
 					background:#d7d7d7;
 					position: absolute;
 					left: -5%; bottom: -5%;
