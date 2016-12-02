@@ -103,7 +103,7 @@
 			h3 {
 				text-align: right;
 				text-transform: none;
-				font-size: 4.5rem;
+				font-size: 4.25rem;
 				line-height: 1.25;
 				letter-spacing: .25rem;
 				white-space: nowrap;
@@ -196,7 +196,6 @@
 			position: relative;
 
 			&:first-child {
-				border: 1px solid black; 
 				margin-left: 0;
 			}
 			@include transition(background-color 1s $ease-in-out-sine);
@@ -214,11 +213,34 @@
 				border-radius: 100%;
 				background: black;
 			}
-
+			&.slick-visited {
+				&:not(:first-child) {
+					&:after {
+						content: " ";
+						height:1px; 
+						width: 1.1rem;
+						background:black;
+						position: absolute;
+						top: 50%; right: 100%;
+					}
+				}
+			}
 			&.slick-active {
+				border: 1px solid black; 
+
 				&:before {
 					background-color: #949494;
 					opacity: .4;
+				}
+				&:not(:first-child) {
+					&:after {
+						content: " ";
+						height:1px; 
+						width: 1.1rem;
+						background:black;
+						position: absolute;
+						top: 50%; right: 100%;
+					}
 				}
 			}
 		}

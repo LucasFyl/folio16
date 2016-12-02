@@ -109,7 +109,7 @@ function initGallery() {
 	'use strict';
 
 	var projectsGallery = $('#projects-gallery'),
-		slide, slideTitle, slideNext, slideNextTitle,
+		slide, slideTitle, slideNext, slideNextTitle, slideTexts, slideNextTexts,
 		title = '.outer-title h3';
 
 	projectsGallery.slick({
@@ -120,25 +120,42 @@ function initGallery() {
   		autoplaySpeed: 4000,
 		speed: 1000,
         dots: true,
-        appendDots: $('.dots-container')
+        appendDots: $('.dots-container'),
+        pauseOnDotsHover: true
 	});
 
 	$('#projects-gallery').on('afterChange', function(event, slick, currentSlide){
-		slide = $('.slide:eq(' + currentSlide + ')');
+		slide = $('.slick-current');
 		slideTitle = slide.find('h3').selector;
+		slideTexts = slide.find('p').selector;
 
-		TweenMax.to('.slick-current h3', 0.5, {transform:'none',ease:Power2.easeOut,});
+		// animate slide content back into place
+		TweenMax.staggerTo(slideTitle, 0.5, {transform:'none',ease:Power2.easeOut,}, 0.1);
+		TweenMax.staggerTo(slideTexts, 0.5, {opacity:1,ease:Power2.easeOut}, 0.15);
 	});
 
 	$('#projects-gallery').on('beforeChange', function(event, slick, currentSlide, nextSlide){
 		slide = $('.slick-current');
 		slideTitle = slide.find('h3').selector;
-
+		slideTexts = slide.find('p').selector;
 		slideNext = slide.next('.slick-slide');
 		slideNextTitle = slideNext.find('h3').selector;
+		slideNextTexts = slideNext.find('p').selector;
 
+		// Animate slide content to leave + setup next slide content
 		TweenMax.to(slideNextTitle, 0.5, {x:'100%',ease:Power2.easeOut});
 		TweenMax.to(slideTitle, 0.5, {x:'-100%',ease:Power2.easeOut});
+		TweenMax.to(slideTexts, 0.5, {opacity:0,ease:Power2.easeOut});
+		TweenMax.set(slideNextTexts, {opacity:0});
+
+		// update dots class
+		if (nextSlide <= currentSlide) {
+			$('.slick-dots li').removeClass('slick-visited');
+		}
+		
+		for(var i = 0; i <= nextSlide; i++) {
+			$('.slick-dots li').eq(i).addClass('slick-visited');
+		}
 	});
 
 	var article = projectsGallery.find('article');

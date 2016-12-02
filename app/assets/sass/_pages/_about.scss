@@ -84,7 +84,7 @@ main.about {
 			margin-top: 10rem;
 			width: $col2;
 			left: $col1;
-			padding-right: 12rem;
+			padding-right: 10rem;
 			@include media(min-width 768px max-width 1360px) {
 				padding-right: 5rem;
 			}

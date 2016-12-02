@@ -1,0 +1,61 @@
+Title: Zalando
+
+----
+
+Maintitleline1: A cosmic travel through 
+
+----
+
+Maintitleline2: space for a trendy new brand
+
+----
+
+Coverimage: cover.png
+
+----
+
+Directurl: http://cosmic-journey.mint-and-berry.com
+
+----
+
+Type: Agency (b-reel Berlin)
+
+----
+
+Period: August - Sept. 2016
+
+----
+
+Role: Front-end/Creative development
+
+----
+
+Technos: MustacheJS, GSAP, Scroll Magic
+
+----
+
+Projectlandingtitle: Mint-and-Berry
+
+----
+
+Projectlandingsubtitle: An interactive promotional website with a cosmic vibe.
+
+----
+
+Projectlandingtext: 
+
+----
+
+Projecttype: Responsive Website w/ animations
+
+----
+
+Projectperiod: February - March 2016
+
+----
+
+Projectclient: Zalando (via b-reel)
+
+----
+
+Projectrole: Front-end developer

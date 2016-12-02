@@ -1,0 +1,30 @@
+{
+  "name": "Lucas Fayolle - Portfolio 2016",
+  "homepage": "https://github.com/LucasFyl/folio16",
+  "authors": [
+    "Lucas Fayolle <lfayolle1@gmail.com>"
+  ],
+  "description": "Portfolio 2016",
+  "main": "app/index.php",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "gsap": "~1.18.1",
+    "scrollmagic": "~2.0.5",
+    "bourbon": "~4.2.6",
+    "neat": "~1.7.2"
+  }
+}
