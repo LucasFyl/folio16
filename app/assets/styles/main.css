@@ -39,7 +39,7 @@ body.unlocked {
 }
 body.unlocked main {
   height: 100%;
-  margin-bottom: 50vh;
+  margin-bottom: 38vh;
   overflow: hidden;
 }
 
@@ -938,7 +938,7 @@ body main {
   padding: 1.2rem 2.5rem;
   width: 16.66vw;
   max-width: 215px;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   opacity: 0;
 }

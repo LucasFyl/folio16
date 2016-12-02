@@ -30,4 +30,32 @@ Role: Développement Front-end
 
 ----
 
-Technos: Prestashop (e-commerce CMS)
+Technos: Prestashop (CMS e-commerce)
+
+----
+
+ProjectLandingTitle: UNDGRETEL
+
+----
+
+ProjectLandingSubtitle: Luxury natural and organic makeup
+
+----
+
+ProjectLandingText: 
+
+----
+
+ProjectType: Site marchand responsive
+
+----
+
+ProjectPeriod: Novembre - Mars 2015
+
+----
+
+Projectclient: UNDGRETEL (via Acne)
+
+----
+
+Projectrole: Développeur front-end

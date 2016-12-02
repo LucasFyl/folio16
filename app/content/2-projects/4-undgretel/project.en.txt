@@ -34,7 +34,7 @@ Technos: Prestashop (e-commerce CMS)
 
 ----
 
-ProjectLandingTitle: UND GRETEL Berlin
+ProjectLandingTitle: UNDGRETEL
 
 ----
 
@@ -54,7 +54,7 @@ ProjectPeriod: November - March 2015
 
 ----
 
-Projectclient: UNDGRETEL
+Projectclient: UNDGRETEL (via Acne)
 
 ----
 

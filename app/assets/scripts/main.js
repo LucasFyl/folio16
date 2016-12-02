@@ -124,7 +124,7 @@ function initGallery() {
         pauseOnDotsHover: true
 	});
 
-	$('#projects-gallery').on('afterChange', function(event, slick, currentSlide){
+	projectsGallery.on('afterChange', function(event, slick, currentSlide){
 		slide = $('.slick-current');
 		slideTitle = slide.find('h3').selector;
 		slideTexts = slide.find('p').selector;
@@ -134,7 +134,7 @@ function initGallery() {
 		TweenMax.staggerTo(slideTexts, 0.5, {opacity:1,ease:Power2.easeOut}, 0.15);
 	});
 
-	$('#projects-gallery').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+	projectsGallery.on('beforeChange', function(event, slick, currentSlide, nextSlide){
 		slide = $('.slick-current');
 		slideTitle = slide.find('h3').selector;
 		slideTexts = slide.find('p').selector;
@@ -152,32 +152,31 @@ function initGallery() {
 		if (nextSlide <= currentSlide) {
 			$('.slick-dots li').removeClass('slick-visited');
 		}
-		
 		for(var i = 0; i <= nextSlide; i++) {
 			$('.slick-dots li').eq(i).addClass('slick-visited');
 		}
 	});
+	
 
 	var article = projectsGallery.find('article');
 	article.each(function(index, value){
-		$(value)
-			.hover(
-				function(){
-					var overlay = $(this).children('.overlay'),
-					btns = overlay.children('.btn');
+		$(value).hover(
+			function(){
+				var overlay = $(this).children('.overlay'),
+				btns = overlay.children('.btn');
 
-					TweenMax.to(overlay, 1, {visibility:'visible', opacity:1, ease: Power3.easeInOut});
-					TweenMax.staggerTo(btns, 1, {bottom:'5.8rem', opacity:1, ease: Power3.easeInOut});
-				}, function() {
-					var overlay = $(this).children('.overlay'),
-					btns = overlay.children('.btn');
+				TweenMax.to(overlay, 1, {visibility:'visible', opacity:1, ease: Power3.easeInOut});
+				TweenMax.staggerTo(btns, 1, {bottom:'5.8rem', opacity:1, ease: Power3.easeInOut});
+			}, function() {
+				var overlay = $(this).children('.overlay'),
+				btns = overlay.children('.btn');
 
-					TweenMax.to(overlay, 1, {opacity:0, ease: Power3.easeInOut});
-					TweenMax.staggerTo(btns, 1, {bottom:0, opacity:0, ease: Power3.easeInOut});
-
-				}
-			);
+				TweenMax.to(overlay, 1, {opacity:0, ease: Power3.easeInOut});
+				TweenMax.staggerTo(btns, 1, {bottom:0, opacity:0, ease: Power3.easeInOut});
+			}
+		);
 	});
+
 }
 
 function outerTitleAnim() {

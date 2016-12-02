@@ -21,20 +21,20 @@ I work both remotely and on-site with private clients as well as creative agenci
 
 ----
 
-Text2: From 2011 to 2014 I have spent 3 years at (link: http://hetic.net text: HÉTIC), a renowned French web-school, studying digital creation, technology as well as project and business management.
+Text2: From 2011 to 2014 I have spent 3 years at (link: http://hetic.net text: HÉTIC popup: yes), a renowned French web-school, studying digital creation, technology as well as project and business management.
 
 ----
 
-Text3: I am very curious by nature and love to experiment. I discovered digital work through my studies but I also have many other interests. Do not hesitate to (link: mailto:contact@lucasfayolle.com text: get in touch) with me if you want more informations, have a project idea, or anything else.
+Text3: I am very curious by nature and love to experiment. I discovered digital work through my studies but I also have many other interests. Do not hesitate to (email: contact@lucasfayolle.com text: get in touch) with me if you want more informations, have a project idea, or anything else.
 
 ----
 
-Linkedinlink: 
+Linkedinlink: https://www.linkedin.com/in/lucasfayolle
 
 ----
 
-Resumelink: 
+Resumelink: http://lucasfayolle.com/content/1-about/CV-2016-LucasFayolle.pdf
 
 ----
 
-Contactlink: 
+Contactlink: mailto:contact@lucasfayolle.com
