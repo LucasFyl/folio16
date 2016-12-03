@@ -1,6 +1,7 @@
 .other {
 	position: absolute;
-	left: $col1; bottom: 4.7rem;
+	left: $col1; top: 92.5vh;
+	padding-left: 0.75rem;
 	margin: 0;
 	
 	font-family: $base-font;
@@ -10,15 +11,26 @@
 	line-height: 1.6rem;
 	text-transform: none;
 
-	@include underlined(transparent, black);
-	padding-right: 2rem;
-	background:url('../images/asset-caret-down.png') no-repeat right .16rem;
-	background-size: 1.3rem;
-	@include media($mobile) {
-		bottom: 2.5rem;
-		left: initial;
-		@include center(horizontal);
-		position: absolute;
+
+	&:before {
+		content: " ";
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    
+	    width: .1rem;
+	    height: 25rem;
+	    
+	    background: black;
+	    z-index: 9999;
+	    @include transition(height 1.5s $ease-out-expo);
+
+	    @include media(max-width 1000px) {
+	    	width: 1px;
+	    }
+	    @include media($mobile) {
+	    	display: none;
+	    }
 	}
 }
 

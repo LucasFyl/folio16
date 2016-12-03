@@ -1,3 +1,4 @@
+<a href="#" class="other"><span><?php echo $page->otherProjects()->html() ?></span></a>
 <section class="other-projects">
   	<?php foreach(page('projects')->children()->visible()->slice(5) as $project): ?>
 	<article>

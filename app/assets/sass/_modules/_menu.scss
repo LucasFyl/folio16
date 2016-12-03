@@ -69,7 +69,7 @@
 
 #menu {
 	@include size($col1 100%);
-	position: absolute;
+	position: fixed;
 	z-index: 999;
 	left: $col1;
 
