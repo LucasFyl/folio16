@@ -46,7 +46,7 @@ function hideLoaderHome(){
 	var loaderTl = new TimelineMax();
 	var barH = $('#loader .bar').height();
 
-	TweenMax.set('article:first .text p', {opacity:0});
+	TweenMax.set('#projects-gallery article:first .text p', {opacity:0});
 	TweenMax.set('#projects-gallery', {className:'+=no-line'});
 	TweenMax.set('.slick-dots li', {className:'+=hidden'});
 
@@ -74,7 +74,7 @@ function hideLoaderHome(){
 			.set('#projects-gallery', {className:'-=no-line',onComplete:function(){
 				outerTitleAnim();
 			}})
-			.staggerTo('article:first .text p', 0.5, {opacity:1, ease:Expo.easeOut}, 0.15)
+			.staggerTo('#projects-gallery article:first .text p', 0.5, {opacity:1, ease:Expo.easeOut}, 0.15)
 			.play();
 
 	// console.log(loaderTl.duration());
@@ -84,7 +84,7 @@ function hideLoader() {
 	var loaderTl = new TimelineMax();
 	var barH = $('#loader .bar').height();
 
-	TweenMax.set('article:first .text p', {opacity:0});
+	TweenMax.set('#projects-gallery article:first .text p', {opacity:0});
 	TweenMax.set('#projects-gallery', {className:'+=no-line'});
 	TweenMax.set('.slick-dots li', {className:'+=hidden'});
 	
@@ -137,9 +137,10 @@ function initGallery() {
 		slide = $('.slick-current');
 		slideTitle = slide.find('h3').selector;
 		slideTexts = slide.find('p').selector;
-		slideNext = slide.next('.slick-slide');
+		
+		slideNext = slide.next('article');
 		slideNextTitle = slideNext.find('h3').selector;
-		slideNextTexts = slideNext.find('p').selector;
+		slideNextTexts = slideNext.find('.text p').selector;
 
 		// Animate slide content to leave + setup next slide content
 		TweenMax.to(slideNextTitle, 0.5, {x:'100%',ease:Power2.easeOut});
