@@ -32,11 +32,13 @@
 
 	&:before {
 		content: " ";
-	    position: fixed;
-	    left: calc(16.66vw * 4);
+	    position: absolute;
+	    left: calc((16.48vw * 4) - 11rem);
+	    top: -6.2rem;
+	    
 	    width: .1rem;
 	    height: calc(100vh - 10.2rem);
-	    top: 3.7rem;
+	    
 	    background: black;
 	    z-index: 9999;
 	    @include transition(height 1.5s $ease-out-expo);
@@ -80,7 +82,7 @@
 				max-width: $col2;
 				position: relative;
 				top: 5rem;
-    			left: 9.45%;
+    			left: calc(16.5vw - 12rem);
 				@include media($mobile) {
 					margin-top: 2rem;
 				}

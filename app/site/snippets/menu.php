@@ -16,7 +16,7 @@
 			<?php foreach(page('projects')->children()->visible()->limit(5) as $project): ?>
 			<li><a href="<?php echo $project->url() ?>"><span><?php echo $project->title() ?></span></a></li>
 			<?php endforeach; ?>
-			<li><p>-</p></li>
+			<!-- <li><p>-</p></li> -->
 			<?php foreach(page('projects')->children()->visible()->slice(5) as $project): ?>
 			<li><a href="<?php echo $project->url() ?>"><span><?php echo $project->title() ?></span></a></li>
 			<?php endforeach; ?>

@@ -57,10 +57,10 @@ function hideLoaderHome(){
 			.to('#loader .bar', 0.25, {top:-barH,ease:Power3.Out})
 			// until here basic loading bar w/ exit
 			.set('.grid', {zIndex:'99999'}).set('.grid div', {height:0,onComplete:function(){
-				
+				// Prepare outer-title el for animation 
 				$('#projects-gallery article').find('h3').wrap('<div class="outer-title"></div>');
 				TweenMax.set('article:first .outer-title > *', {y:500});
-
+				// init gallery when done
 				setTimeout(function(){
 					initGallery();
 				}, 200);
@@ -72,10 +72,9 @@ function hideLoaderHome(){
 			.set('.grid', {zIndex:'-1'})
 			// // hide loader and reset grid bars zIndex
 			.set('#projects-gallery', {className:'-=no-line',onComplete:function(){
-			}})
-			.staggerTo('article:first .text p', 0.5, {opacity:1, ease:Expo.easeOut,onComplete:function(){
 				outerTitleAnim();
-			}}, 0.15)
+			}})
+			.staggerTo('article:first .text p', 0.5, {opacity:1, ease:Expo.easeOut}, 0.15)
 			.play();
 
 	// console.log(loaderTl.duration());
@@ -116,8 +115,8 @@ function initGallery() {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: false,
-		autoplay: false,
-  		autoplaySpeed: 4000,
+		autoplay: true,
+  		autoplaySpeed: 6000,
 		speed: 1000,
         dots: true,
         appendDots: $('.dots-container'),
@@ -196,8 +195,8 @@ var Navigation = {
 	open: function() {
 		'use strict';
 		var openMenuTl = new TimelineMax({paused: true});
-
 		openMenuTl
+			.set('#projects-gallery', {className:'+=no-line'})
 			.set('#menu > *', {opacity:1,y:0})
 			.set('.grid', {zIndex:99})
 			.to('.grid div', 0.25, {className:'-=empty',ease:Expo.easeOut})
@@ -205,50 +204,17 @@ var Navigation = {
 			.set('#menu', {display:'block'})
 			.staggerTo('#menu .id > *, #menu nav > *, #menu nav li', 0.15, {opacity:1,x:0,y:0,ease:Expo.easeOut}, 0.05)
 			.play();
-		
-		// if ( $('main.home').length ) {
-		// 	openMenuTl
-		// 		.set('#menu', {display:'block'})
-		// 		.set('#projects-gallery', {className:'+=no-line'})
-		// 		.staggerFromTo('#menu a', 0.5, {y:50,opacity:0}, {y:0,opacity:1, ease:Expo.easeOut}, 0.1)
-		// 		.to('#projects-gallery article > *, .gallery-title, .dots-container', 0.5, {opacity:0,ease:Expo.easeOut}, '-=0.5')
-		// 		.to('#projects-gallery', 1, {opacity:0.4, ease:Expo.easeOut}, '-=0.5')
-		// 		.play();
-		// } else {
-		// 	openMenuTl
-		// 		.set('#menu', {display:'block'})
-		// 		.to('main, .landing, .blockprevnext', 0.5, {className:'+=op0',ease:Expo.easeOut})
-		// 		.staggerFromTo('#menu a', 0.5, {y:50,opacity:0}, {y:0,opacity:1, ease:Expo.easeOut}, 0.1)
-		// 		.play();
-		// }
 	},
 	close: function() {
 		'use strict';
-
-			
 		var closeMenuTl = new TimelineMax({paused: true});
-
 		closeMenuTl
 			.to('#menu > *', 0.25, {opacity:0,y:50,ease:Expo.easeIn})
 			.to('.grid div', 0.25, {className:'+=empty',ease:Expo.easeOut})
 			.set('.grid', {zIndex:'-1',delay:0.5})
+			.set('#projects-gallery', {className:'-=no-line'})
 			.set('#menu', {display:'none'})
 			.play();
-		// if ( $('main.home').length ) {
-		// 	closeMenuTl
-		// 		.set('#projects-gallery', {className:'-=no-line'})
-		// 		.staggerFromTo('#menu a', 0.5, {y:0,opacity:1}, {y:50,opacity:0, ease:Power2.easeIn}, -0.1)
-		// 		.set('#menu', {display:'none'})
-		// 		.to('#projects-gallery article > *, .gallery-title, .dots-container', 0.5, {opacity:1,ease:Expo.easeIn}, '-=0.5')
-		// 		.to('#projects-gallery', 1, {opacity:1, ease:Expo.easeOut})
-		// 		.play();
-		// } else {
-		// 	closeMenuTl
-		// 		.staggerFromTo('#menu a', 0.5, {y:0,opacity:1}, {y:50,opacity:0, ease:Power2.easeIn}, -0.1)
-		// 		.to('main, .landing, .blockprevnext', 0.5, {className:'-=op0',ease:Expo.easeIn}, '-=0.5')
-		// 		.set('#menu', {display:'none'})
-		// 		.play();
-		// }
 	},
 	bindEvents: function() {
 		'use strict';

@@ -936,8 +936,6 @@ body main {
   text-align: left;
   font-size: 1.3rem;
   padding: 1.2rem 2.5rem;
-  width: 16.66vw;
-  max-width: 215px;
   position: absolute;
   bottom: 0;
   opacity: 0;
@@ -955,22 +953,6 @@ body main {
   .cta:nth-child(2) {
     left: calc(16.66vw - 12rem);
   }
-}
-.cta:before {
-  content: " ";
-  height: 100%;
-  width: 0;
-  background: url("../images/arrow-right.svg") no-repeat center center;
-  background-size: 3rem 1rem;
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: width 0.2s cubic-bezier(0.19, 1, 0.22, 1);
-}
-.cta:hover:before {
-  width: 5rem;
-  transition: width 0.2s cubic-bezier(0.95, 0.05, 0.795, 0.035);
 }
 
 #loader {
@@ -1073,14 +1055,14 @@ body main {
 #menu p, #menu a {
   text-decoration: none;
   font-size: 1.3rem;
-  font-family: "GothamBook", sans-serif;
+  font-family: "GothamLight", sans-serif;
   color: black;
   line-height: 1.5;
   margin-bottom: 0;
   margin-top: 0;
 }
 #menu .strong {
-  font-family: "GothamLight", sans-serif;
+  font-family: "GothamBook", sans-serif;
   font-size: 1.8rem;
   letter-spacing: .1rem;
   margin-bottom: 2.5rem;
@@ -1093,7 +1075,7 @@ body main {
   margin-bottom: 0;
 }
 #menu .id > *:not(.strong) {
-  color: rgba(0, 0, 0, 0.5);
+  color: #919191;
 }
 #menu nav {
   height: 100%;
@@ -1104,7 +1086,7 @@ body main {
   list-style: none;
 }
 #menu nav ul li a {
-  opacity: .5;
+  color: #919191;
 }
 #menu nav ul li:last-child {
   margin-bottom: 2.5rem;
@@ -1254,11 +1236,11 @@ body main {
 }
 #projects-gallery:before {
   content: " ";
-  position: fixed;
-  left: calc(16.66vw * 4);
+  position: absolute;
+  left: calc((16.48vw * 4) - 11rem);
+  top: -6.2rem;
   width: .1rem;
   height: calc(100vh - 10.2rem);
-  top: 3.7rem;
   background: black;
   z-index: 9999;
   transition: height 1.5s cubic-bezier(0.19, 1, 0.22, 1);
@@ -1301,7 +1283,7 @@ body main {
   max-width: calc(16.6vw * 2);
   position: relative;
   top: 5rem;
-  left: 9.45%;
+  left: calc(16.5vw - 12rem);
 }
 @media screen and (max-width: 480px) {
   #projects-gallery article .text.top {
@@ -1484,7 +1466,7 @@ body main {
 
 .other {
   position: absolute;
-  left: 9.7rem;
+  left: calc(16.6vw * 1);
   bottom: 4.7rem;
   margin: 0;
   font-family: "GothamBook", sans-serif;
@@ -1854,10 +1836,10 @@ main.about .text {
   }
 }
 main.about .text p {
-  font-family: 'PT Serif';
+  font-family: 'GothamLight';
   line-height: 1.5;
-  font-size: 1.5rem;
-  color: black;
+  font-size: 1.3rem;
+  color: #898989;
 }
 main.about .text p a {
   position: relative;

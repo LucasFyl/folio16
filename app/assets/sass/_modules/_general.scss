@@ -112,10 +112,7 @@ body {
     font-size: 1.3rem;
 
     padding: 1.2rem 2.5rem;
-    width: 16.66vw;
-    max-width: 215px;
     position: absolute;
-    // bottom: 15.8rem;
     bottom: 0;
     opacity: 0;
 
@@ -127,7 +124,6 @@ body {
     }
 
     @include media(max-width 1225px) {
-    
       &:first-child {
         @include transform(translateY(-120%));
       }
@@ -136,20 +132,20 @@ body {
       }
     }
 
-    &:before {
-      content: " ";
-      @include size(0 100%);
-      background:url('../images/arrow-right.svg') no-repeat center center;
-      background-size: 3rem 1rem;
-      display: block;
-      position: absolute;
-      right: 0;top:0;
-      @include transition(width 0.2s $ease-out-expo);
-    }
-    &:hover {
-      &:before {
-        width: 5rem;
-        @include transition(width 0.2s $ease-in-expo);
-      }
-    }
+    // &:before {
+    //   content: " ";
+    //   @include size(0 100%);
+    //   background:url('../images/arrow-right.svg') no-repeat center center;
+    //   background-size: 3rem 1rem;
+    //   display: block;
+    //   position: absolute;
+    //   right: 0;top:0;
+    //   @include transition(width 0.2s $ease-out-expo);
+    // }
+    // &:hover {
+    //   &:before {
+    //     width: 5rem;
+    //     @include transition(width 0.2s $ease-in-expo);
+    //   }
+    // }
   }
